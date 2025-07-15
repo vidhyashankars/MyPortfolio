@@ -35,6 +35,30 @@ const SkillsExplorerPage: React.FC<SkillsExplorerPageProps> = ({ onClose }) => {
       category: 'BDD',
       difficulty: 'Beginner'
     },
+    'Manual Testing': {
+      fact: 'Manual testing finds 85% of usability issues that automated tests miss! Human intuition beats algorithms for UX bugs.',
+      icon: '🔍',
+      category: 'Testing',
+      difficulty: 'Beginner'
+    },
+    'Mobile App Testing': {
+      fact: 'There are over 24,000 different Android devices! Mobile testing requires checking across countless screen sizes and OS versions.',
+      icon: '📱',
+      category: 'Mobile',
+      difficulty: 'Intermediate'
+    },
+    'AWS': {
+      fact: 'AWS has over 200 services and powers 32% of the cloud market! It started as Amazon\'s internal infrastructure in 2006.',
+      icon: '☁️',
+      category: 'Cloud',
+      difficulty: 'Advanced'
+    },
+    'Git': {
+      fact: 'Git was created by Linus Torvalds in just 10 days! The name "Git" is British slang for "unpleasant person" - Linus\' humor!',
+      icon: '🌿',
+      category: 'Version Control',
+      difficulty: 'Intermediate'
+    },
     'Jenkins': {
       fact: 'Jenkins has over 1,800 plugins and is used by 70% of DevOps teams worldwide!',
       icon: '🏗️',
@@ -92,7 +116,11 @@ const SkillsExplorerPage: React.FC<SkillsExplorerPageProps> = ({ onClose }) => {
       'CI/CD': 'text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/30',
       'DevOps': 'text-teal-600 bg-teal-100 dark:text-teal-400 dark:bg-teal-900/30',
       'API Testing': 'text-pink-600 bg-pink-100 dark:text-pink-400 dark:bg-pink-900/30',
-      'Management': 'text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-900/30'
+      'Management': 'text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-900/30',
+      'Testing': 'text-green-600 bg-green-100 dark:text-green-400 dark:bg-green-900/30',
+      'Mobile': 'text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/30',
+      'Cloud': 'text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/30',
+      'Version Control': 'text-emerald-600 bg-emerald-100 dark:text-emerald-400 dark:bg-emerald-900/30'
     };
     return colors[category as keyof typeof colors] || colors.Management;
   };
