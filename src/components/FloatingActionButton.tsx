@@ -245,6 +245,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
 const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [clickedSkills, setClickedSkills] = useState<Set<string>>(new Set());
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
   const skillFacts = {
     'Playwright': 'Did you know? Playwright can test across Chrome, Firefox, and Safari with the same code!',
@@ -258,6 +259,7 @@ const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
   };
 
   const handleSkillClick = (skillName: string) => {
+    setSelectedSkill(skillName);
     const newClickedSkills = new Set(clickedSkills);
     if (newClickedSkills.has(skillName)) {
       newClickedSkills.delete(skillName);
@@ -299,13 +301,13 @@ const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
         </div>
 
         {/* Fun Facts Display */}
-        {(hoveredSkill || clickedSkills.size > 0) && hoveredSkill && skillFacts[hoveredSkill as keyof typeof skillFacts] && (
+        {(selectedSkill || hoveredSkill) && (selectedSkill || hoveredSkill) && skillFacts[(selectedSkill || hoveredSkill) as keyof typeof skillFacts] && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 p-4 bg-white dark:bg-gray-700 rounded-lg border-2 border-primary-300 dark:border-primary-600 shadow-lg sticky top-0 z-10"
+            className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-2 border-blue-300 dark:border-blue-600 shadow-lg"
           >
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
@@ -313,10 +315,10 @@ const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
               </div>
               <div className="flex-1 min-w-0">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">
-                  {hoveredSkill}
+                  {selectedSkill || hoveredSkill}
                 </h4>
                 <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {skillFacts[hoveredSkill as keyof typeof skillFacts]}
+                  {skillFacts[(selectedSkill || hoveredSkill) as keyof typeof skillFacts]}
                 </p>
               </div>
             </div>
@@ -330,16 +332,13 @@ const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
               key={skill}
               onClick={() => handleSkillClick(skill)}
               onMouseEnter={() => setHoveredSkill(skill)}
-              onMouseLeave={() => {
-                // Add a small delay before clearing to prevent flickering
-                setTimeout(() => setHoveredSkill(null), 150);
-              }}
+              onMouseLeave={() => setHoveredSkill(null)}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className={`p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                 clickedSkills.has(skill)
                   ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
-                  : hoveredSkill === skill
+                  : hoveredSkill === skill || selectedSkill === skill
                   ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-2 border-primary-300 dark:border-primary-600'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
