@@ -6,25 +6,16 @@ const WelcomeAnimation = () => {
   const [showWelcome, setShowWelcome] = useState(false);
 
   useEffect(() => {
-    // Check if user has visited today
-    const today = new Date().toDateString();
-    const lastVisit = localStorage.getItem('lastVisitDate');
-    
-    if (lastVisit !== today) {
-      // Show welcome animation after a short delay
-      const timer = setTimeout(() => {
-        setShowWelcome(true);
-      }, 1000);
+    // Show welcome animation after a short delay on every page load
+    const timer = setTimeout(() => {
+      setShowWelcome(true);
+    }, 1000);
 
-      return () => clearTimeout(timer);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setShowWelcome(false);
-    // Mark today as visited
-    const today = new Date().toDateString();
-    localStorage.setItem('lastVisitDate', today);
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
