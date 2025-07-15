@@ -42,15 +42,6 @@ const Footer = () => {
                 <p className="text-gray-400 dark:text-gray-500 text-sm mb-2">
                 © 2024 Vinu. All rights reserved. Built with passion for quality.
                 </p>
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="text-primary-400 dark:text-primary-300 text-sm font-medium"
-                >
-                  Cheers for dropping by—now let's crack on! 🇦🇺
-                </motion.p>
               </div>
               
               <motion.button
