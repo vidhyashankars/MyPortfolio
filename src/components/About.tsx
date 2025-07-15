@@ -96,7 +96,7 @@ const About = () => {
                 className="w-full h-64 object-cover rounded-xl mb-6"
               />
               <h3 className="text-2xl font-bold mb-2">Vidhya Shankar (Vid)</h3>
-             /*<p className="text-primary-100 mb-4">QA Professional</p>*/
+             //<p className="text-primary-100 mb-4">QA Professional</p>
               <p className="text-sm text-primary-100">
                 "Quality is not an act, it is a habit. I believe in creating sustainable 
                 testing practices that ensure long-term software excellence."
