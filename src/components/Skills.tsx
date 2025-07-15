@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Database, Settings, Users, Zap, CheckSquare, GitBranch } from 'lucide-react';
+import InteractiveSkills from './InteractiveSkills';
 
 const Skills = () => {
   const skillCategories = [
@@ -156,6 +157,9 @@ const Skills = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Interactive Skills Section */}
+        <InteractiveSkills />
       </div>
     </section>
   );
