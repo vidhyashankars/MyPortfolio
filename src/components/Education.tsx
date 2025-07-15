@@ -65,9 +65,6 @@ const Education = () => {
           </motion.h3>
 
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 rounded-full"></div>
-
             <div className="space-y-12">
               {education.map((edu, index) => (
                 <motion.div
@@ -78,13 +75,10 @@ const Education = () => {
                   viewport={{ once: true }}
                   className="relative flex items-center justify-center"
                 >
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-
                   {/* Content */}
                   <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
-                    className="w-full md:w-6/12 ml-12 md:ml-0"
+                    className="w-full md:w-6/12"
                   >
                     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                       <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{edu.degree}</h4>
