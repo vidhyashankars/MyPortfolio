@@ -6,10 +6,11 @@ const WelcomeAnimation = () => {
   const [showWelcome, setShowWelcome] = useState(false);
 
   useEffect(() => {
-    // Check if user has visited before
-    const hasVisited = localStorage.getItem('hasVisitedBefore');
+    // Check if user has visited today
+    const today = new Date().toDateString();
+    const lastVisit = localStorage.getItem('lastVisitDate');
     
-    if (!hasVisited) {
+    if (lastVisit !== today) {
       // Show welcome animation after a short delay
       const timer = setTimeout(() => {
         setShowWelcome(true);
@@ -21,8 +22,9 @@ const WelcomeAnimation = () => {
 
   const handleClose = () => {
     setShowWelcome(false);
-    // Mark user as having visited
-    localStorage.setItem('hasVisitedBefore', 'true');
+    // Mark today as visited
+    const today = new Date().toDateString();
+    localStorage.setItem('lastVisitDate', today);
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -105,7 +107,7 @@ const WelcomeAnimation = () => {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="text-3xl font-bold text-gray-900 dark:text-white mb-4"
               >
-                G'day Legends!
+                G'day ladies, gents, and all you top mates out there!
               </motion.h2>
 
               <motion.p
@@ -114,7 +116,7 @@ const WelcomeAnimation = () => {
                 transition={{ delay: 0.7, duration: 0.6 }}
                 className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
               >
-                We're all about quality, connection, and a fair go. Let's make it count.
+                Welcome to my little corner of the web! I'm Vid, your friendly QA mate who's passionate about delivering top-notch quality. Whether you're here for a quick squiz or a deep dive into my work, I'm stoked to have you aboard. Let's make something brilliant together!
               </motion.p>
 
               {/* Action button */}
@@ -127,7 +129,7 @@ const WelcomeAnimation = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Let's Get Started! 🚀
+                Too right, let's dive in! 🚀
               </motion.button>
 
             </div>
