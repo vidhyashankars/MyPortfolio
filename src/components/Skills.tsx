@@ -158,8 +158,6 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Interactive Skills Section */}
-        <InteractiveSkills />
       </div>
     </section>
   );
