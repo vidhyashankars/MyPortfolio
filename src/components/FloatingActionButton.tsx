@@ -253,20 +253,59 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
   // Generate 35 bugs with random positions and types
   const bugs = React.useMemo(() => {
     const bugTypes = ['🐛', '🐞', '🦗', '🕷️', '🐜', '🦟', '🪲', '🪳'];
-    const positions = [];
+    const positions: Array<{
+      id: number;
+      position: { top: string; left: string };
+      type: string;
+    }> = [];
     
-    // Generate 35 unique positions
+    // Helper function to check if two positions overlap
+    const isOverlapping = (pos1: { top: number; left: number }, pos2: { top: number; left: number }) => {
+      const minDistance = 8; // Minimum distance between bugs (in percentage)
+      const distance = Math.sqrt(
+        Math.pow(pos1.top - pos2.top, 2) + Math.pow(pos1.left - pos2.left, 2)
+      );
+      return distance < minDistance;
+    };
+    
+    // Generate positions with collision detection
     for (let i = 1; i <= 35; i++) {
+      let attempts = 0;
+      let validPosition = false;
+      let newPos = { top: 0, left: 0 };
+      
+      // Try to find a non-overlapping position (max 50 attempts)
+      while (!validPosition && attempts < 50) {
+        newPos = {
+          top: Math.random() * 80 + 10, // 10% to 90% to avoid edges
+          left: Math.random() * 80 + 10, // 10% to 90% to avoid edges
+        };
+        
+        // Check if this position overlaps with existing bugs
+        validPosition = !positions.some(existingBug => {
+          const existingPos = {
+            top: parseFloat(existingBug.position.top),
+            left: parseFloat(existingBug.position.left)
+          };
+          return isOverlapping(newPos, existingPos);
+        });
+        
+        attempts++;
+      }
+      
+      // If we couldn't find a non-overlapping position after 50 attempts,
+      // use the last generated position anyway (fallback)
       const position = {
         id: i,
         position: {
-          top: `${Math.random() * 85 + 5}%`, // 5% to 90% to avoid edges
-          left: `${Math.random() * 85 + 5}%`, // 5% to 90% to avoid edges
+          top: `${newPos.top}%`,
+          left: `${newPos.left}%`,
         },
         type: bugTypes[Math.floor(Math.random() * bugTypes.length)]
       };
       positions.push(position);
     }
+    
     return positions;
   }, []);
 
@@ -432,13 +471,13 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
         )}
 
         {/* Bug Hunt Area */}
-        <div className="relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg h-96 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg h-[500px] overflow-hidden">
           {bugs.map((bug) => (
             <motion.button
               key={bug.id}
               onClick={() => handleBugClick(bug.id)}
               style={bug.position}
-              className={`absolute text-lg transition-all duration-300 ${
+              className={`absolute text-base w-6 h-6 flex items-center justify-center transition-all duration-300 ${
                 foundBugs.has(bug.id) ? 'opacity-30 scale-75' : 'hover:scale-125'
               }`}
               whileHover={{ scale: foundBugs.has(bug.id) ? 0.75 : 1.3 }}
