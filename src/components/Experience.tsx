@@ -12,7 +12,7 @@ const Experience = () => {
     },
     {
       title: 'Test lead / Senior Test Analyst',
-      company: 'Sherpa',
+      company: 'Sherpa Delivery',
       location: 'Sydney, Australia',
       period:  'Dec 2019 - Jul 2024',
     },
