@@ -112,7 +112,7 @@ const Education = () => {
                       </div>
 
                       <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{edu.description}</p>
-
+                    </div>
                   </motion.div>
 
                   {/* Spacer for alternating layout */}
