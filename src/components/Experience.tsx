@@ -37,7 +37,7 @@ const Experience = () => {
     {
       title: 'Software Test Engineer',
       company: 'Visionet Systems',
-      location: 'Bengaluru, India'',
+      location: 'Bengaluru, India',
       period: 'Jan 2011 - Jan 2014',
     },
   ];
