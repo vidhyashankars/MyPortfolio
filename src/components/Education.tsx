@@ -26,12 +26,6 @@ const Education = () => {
       description: 'PSM I certifies a foundational understanding of Scrum principles and effective application within Scrum Teams.',
     },
     {
-      name: 'Certified Agile Testing Professional',
-      issuer: 'Scrum Alliance',
-      year: '2018',
-      description: 'Specialized certification in agile testing methodologies and practices.',
-    },
-    {
       name: 'AWS Certified Solutions Architect',
       issuer: 'Amazon Web Services',
       year: '2021',
