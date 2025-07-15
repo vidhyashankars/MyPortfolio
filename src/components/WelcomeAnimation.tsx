@@ -6,13 +6,31 @@ const WelcomeAnimation = () => {
   const [showWelcome, setShowWelcome] = useState(false);
 
   useEffect(() => {
-    // Show welcome animation after a short delay on every page load
-    const timer = setTimeout(() => {
-      setShowWelcome(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    // Check if welcome was shown today
+    const today = new Date().toDateString();
+    const lastShown = localStorage.getItem('welcomeLastShown');
+    
+    if (lastShown !== today) {
+      // Show welcome animation after a short delay
+      const timer = setTimeout(() => {
+        setShowWelcome(true);
+        localStorage.setItem('welcomeLastShown', today);
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    }
   }, []);
+
+  useEffect(() => {
+    // Auto-dismiss after 8 seconds if user doesn't interact
+    if (showWelcome) {
+      const autoDismissTimer = setTimeout(() => {
+        setShowWelcome(false);
+      }, 8000);
+      
+      return () => clearTimeout(autoDismissTimer);
+    }
+  }, [showWelcome]);
 
   const handleClose = () => {
     setShowWelcome(false);
