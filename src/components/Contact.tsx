@@ -88,8 +88,8 @@ const Contact = () => {
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Github size={20} />
-              Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
-              Always learning, always testing, always growing. Ready to bring that Aussie spirit to your next quality challenge!
+                View GitHub
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>
