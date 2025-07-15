@@ -248,9 +248,8 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
   const [gameComplete, setGameComplete] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
   const [gameStarted, setGameStarted] = useState(false);
-  const [perfectScore, setPerfectScore] = useState(false);
 
-  // Generate 35 bugs with random positions and types
+  // Generate 40 bugs with random positions and types
   const bugs = React.useMemo(() => {
     const bugTypes = ['🐛', '🐞', '🦗', '🕷️', '🐜', '🦟', '🪲', '🪳'];
     const positions: Array<{
@@ -269,7 +268,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
     };
     
     // Generate positions with collision detection
-    for (let i = 1; i <= 35; i++) {
+    for (let i = 1; i <= 40; i++) {
       let attempts = 0;
       let validPosition = false;
       let newPos = { top: 0, left: 0 };
@@ -308,31 +307,6 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
     
     return positions;
   }, []);
-
-  // Victory music function
-  const playVictoryMusic = () => {
-    // Create a simple victory tune using Web Audio API
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-    
-    notes.forEach((frequency, index) => {
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
-      
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-      
-      oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-      oscillator.type = 'sine';
-      
-      gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-      
-      oscillator.start(audioContext.currentTime + index * 0.15);
-      oscillator.stop(audioContext.currentTime + index * 0.15 + 0.3);
-    });
-  };
   useEffect(() => {
     if (gameStarted && timeLeft > 0 && !gameComplete) {
       const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
@@ -344,15 +318,6 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
 
   useEffect(() => {
     if (foundBugs.size === bugs.length) {
-      const isPerfect = timeLeft === 30; // Found all bugs in 30 seconds
-      setPerfectScore(isPerfect);
-      if (isPerfect) {
-        try {
-          playVictoryMusic();
-        } catch (error) {
-          console.log('Audio not supported or blocked');
-        }
-      }
       setGameComplete(true);
     }
   }, [foundBugs]);
@@ -367,7 +332,6 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
     setGameComplete(false);
     setTimeLeft(30);
     setGameStarted(false);
-    setPerfectScore(false);
   };
 
   return (
@@ -411,10 +375,6 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
           <div className="text-center mb-4">
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               Find all {bugs.length} bugs by clicking on them! You have 30 seconds.
-              <br />
-              <span className="text-primary-600 dark:text-primary-400 font-semibold">
-                🎵 Find all bugs in 30 seconds for a special surprise!
-              </span>
             </p>
             <button
               onClick={() => setGameStarted(true)}
@@ -433,25 +393,14 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
           >
             <motion.div 
               className="text-6xl mb-4"
-              animate={perfectScore ? { 
-                scale: [1, 1.2, 1, 1.1, 1],
-                rotate: [0, 5, -5, 0]
-              } : {}}
-              transition={{ duration: 2, repeat: perfectScore ? Infinity : 0 }}
             >
-              {perfectScore ? '🎉' : foundBugs.size === bugs.length ? '🏆' : '⏰'}
+              {foundBugs.size === bugs.length ? '🏆' : '⏰'}
             </motion.div>
             <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-              {perfectScore ? 'LEGENDARY QA SKILLS! 🎵' : 
-               foundBugs.size === bugs.length ? 'Perfect Hunt!' : 'Time\'s Up!'}
+              {foundBugs.size === bugs.length ? 'Perfect Hunt!' : 'Time\'s Up!'}
             </h4>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               You found {foundBugs.size} out of {bugs.length} bugs!
-              {perfectScore && (
-                <span className="block text-primary-600 dark:text-primary-400 font-semibold mt-2">
-                  🎶 Amazing! You found all bugs in 30 seconds! 🎶
-                </span>
-              )}
             </p>
             <div className="flex gap-3">
               <button
