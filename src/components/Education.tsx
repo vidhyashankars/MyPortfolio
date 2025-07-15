@@ -30,7 +30,8 @@ const Education = () => {
       issuer: 'Amazon Web Services',
       year: '2025',
       description: 'AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.',
-    },
+    }
+   
   ];
 
   return (
