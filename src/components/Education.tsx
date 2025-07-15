@@ -7,9 +7,8 @@ const Education = () => {
     {
       degree: 'Bachelor of Technology in Computer Science',
       institution: 'State Engineering College',
-      location: 'Texas, USA',
-      period: '2009 - 2013',
-      description: 'Comprehensive foundation in computer science fundamentals, including algorithms, data structures, software engineering principles, and database management systems.',
+      location: 'India',
+      period: 'Passed out in 2010',
     },
   ];
 
@@ -114,7 +113,6 @@ const Education = () => {
 
                       <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{edu.description}</p>
 
-                    </div>
                   </motion.div>
 
                   {/* Spacer for alternating layout */}

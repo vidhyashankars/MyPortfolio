@@ -9,40 +9,30 @@ const Experience = () => {
       company: 'Sherpa',
       location: 'Sydney - NSW',
       period: '2025 - Present',
-      description: 'Leading a team of 8 QA engineers, implementing automated testing frameworks, and establishing quality standards across multiple product lines. Reduced bug escape rate by 40% and improved release cycle efficiency by 35%.',
-      technologies: ['Selenium', 'Cypress', 'Jest', 'Jenkins', 'Kubernetes'],
     },
     {
       title: 'QA Manager',
       company: 'InnovateSoft Inc.',
       location: 'Austin, TX',
       period: '2019 - 2021',
-      description: 'Managed QA operations for enterprise software products, designed comprehensive test strategies, and mentored junior QA professionals. Successfully delivered 15+ major releases with zero critical issues.',
-      technologies: ['TestRail', 'Postman', 'JMeter', 'Docker', 'GitLab CI'],
     },
     {
       title: 'Senior QA Engineer',
       company: 'DataFlow Systems',
       location: 'Seattle, WA',
       period: '2017 - 2019',
-      description: 'Developed automated testing suites for microservices architecture, performed API and database testing, and collaborated with development teams in agile environments.',
-      technologies: ['REST Assured', 'MySQL', 'MongoDB', 'JIRA', 'Confluence'],
     },
     {
       title: 'QA Engineer',
       company: 'CloudTech Solutions',
       location: 'Denver, CO',
       period: '2015 - 2017',
-      description: 'Executed manual and automated testing for web and mobile applications, created detailed test documentation, and participated in requirement analysis and design reviews.',
-      technologies: ['Appium', 'TestNG', 'Maven', 'Git', 'Bugzilla'],
     },
     {
       title: 'Junior QA Analyst',
       company: 'StartupVenture',
       location: 'Portland, OR',
       period: '2013 - 2015',
-      description: 'Started career in QA by performing functional testing, regression testing, and user acceptance testing. Learned fundamental testing principles and methodologies.',
-      technologies: ['Manual Testing', 'Excel', 'Test Cases', 'Bug Reporting'],
     },
   ];
 
@@ -112,16 +102,6 @@ const Experience = () => {
 
                     <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-2 py-1 rounded-md text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </motion.div>
 
