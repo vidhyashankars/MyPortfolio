@@ -320,7 +320,6 @@ const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
                 </p>
               </div>
             </div>
-            </p>
           </motion.div>
         )}
 
