@@ -18,13 +18,22 @@ const Footer = () => {
           className="text-center"
         >
           <div className="mb-8">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent mb-4">
-              Vinu
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent mb-6">
+              Thanks for Taking a Look! 🙏
             </h3>
-            <p className="text-gray-400 dark:text-gray-500 max-w-2xl mx-auto">
-              Passionate QA Professional dedicated to delivering software excellence through 
-              comprehensive testing strategies and quality assurance best practices.
-            </p>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <p className="text-gray-300 dark:text-gray-400 text-lg leading-relaxed">
+                Whether you're a recruiter scouting for quality talent or just someone curious about what I do, 
+                I genuinely appreciate you taking the time to explore my work. Your interest means the world to me!
+              </p>
+              <p className="text-primary-300 dark:text-primary-400 font-medium text-lg">
+                Always learning, always testing, always growing.
+              </p>
+              <p className="text-gray-400 dark:text-gray-500 text-base">
+                Ready to bring that same dedication and Aussie spirit to your next quality challenge. 
+                Let's have a yarn about how we can make something brilliant together!
+              </p>
+            </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8">
