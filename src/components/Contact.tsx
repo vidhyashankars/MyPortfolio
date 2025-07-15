@@ -30,7 +30,7 @@ const Contact = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect!</h3>
               viewport={{ once: true }}
               className="mb-8"
             >
@@ -88,8 +88,8 @@ const Contact = () => {
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Github size={20} />
-                View GitHub
-              </motion.a>
+              Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
+              Always learning, always testing, always growing. Ready to bring that Aussie spirit to your next quality challenge!
             </motion.div>
           </motion.div>
         </div>
