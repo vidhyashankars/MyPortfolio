@@ -109,7 +109,7 @@ const Hero = () => {
 
             <div className="flex items-center gap-3">
               <motion.a
-                href="www.linkedin.com/in/vidhyashankarn"
+                href="https://www.linkedin.com/in/vidhyashankarn"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}

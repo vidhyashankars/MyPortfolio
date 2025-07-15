@@ -68,7 +68,7 @@ const Contact = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <motion.a
-                href="www.linkedin.com/in/vidhyashankarn"
+                href="https://www.linkedin.com/in/vidhyashankarn"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
