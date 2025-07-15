@@ -80,7 +80,7 @@ const Contact = () => {
               </motion.a>
               
               <motion.a
-                href="https://github.com/vinu-qa"
+                href="https://github.com/im-vidhyashankar"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
