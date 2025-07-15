@@ -6,7 +6,7 @@ const Education = () => {
   const education = [
     {
       degree: 'Bachelor of Technology in Computer Science',
-      institution: 'State Engineering College',
+      institution: 'Visvesvaraya Technological University,',
       location: 'India',
       period: 'Passed out in 2010',
     },
