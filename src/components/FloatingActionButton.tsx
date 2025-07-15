@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Gamepad2, Brain, Zap, Coffee, X } from 'lucide-react';
+import { Gamepad2, Brain, Zap, X } from 'lucide-react';
+import SkillsExplorerPage from './SkillsExplorerPage';
 
 const FloatingActionButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const FloatingActionButton = () => {
     {
       icon: Brain,
       title: 'Skills Explorer',
-      description: 'Discover skill facts',
+      description: 'Full-page skill discovery',
       action: () => setShowSkillsExplorer(true)
     },
     {
@@ -86,7 +87,7 @@ const FloatingActionButton = () => {
       {/* Skills Explorer Modal */}
       <AnimatePresence>
         {showSkillsExplorer && (
-          <SkillsExplorerModal onClose={() => setShowSkillsExplorer(false)} />
+          <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />
         )}
       </AnimatePresence>
 
@@ -235,131 +236,6 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
               </button>
             </div>
           </div>
-        )}
-      </motion.div>
-    </motion.div>
-  );
-};
-
-// Skills Explorer Modal Component
-const SkillsExplorerModal = ({ onClose }: { onClose: () => void }) => {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const [clickedSkills, setClickedSkills] = useState<Set<string>>(new Set());
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-
-  const skillFacts = {
-    'Playwright': 'Did you know? Playwright can test across Chrome, Firefox, and Safari with the same code!',
-    'Selenium WebDriver': 'Fun fact: Selenium was named after a chemical element that cures mercury poisoning!',
-    'TestNG': 'TestNG supports parallel test execution and flexible test configuration!',
-    'Cucumber': 'Cucumber uses Gherkin language - Given, When, Then - making tests readable by everyone!',
-    'Jenkins': 'Jenkins has over 1,800 plugins and is used by 70% of DevOps teams worldwide!',
-    'Docker': 'Docker containers start in milliseconds and use less memory than VMs!',
-    'Postman': 'Postman has over 20 million developers using it for API testing!',
-    'Jira': 'JIRA stands for "Gojira" - the Japanese name for Godzilla!'
-  };
-
-  const handleSkillClick = (skillName: string) => {
-    setSelectedSkill(skillName);
-    const newClickedSkills = new Set(clickedSkills);
-    if (newClickedSkills.has(skillName)) {
-      newClickedSkills.delete(skillName);
-    } else {
-      newClickedSkills.add(skillName);
-    }
-    setClickedSkills(newClickedSkills);
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[200] flex items-center justify-center p-4"
-    >
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto"
-      >
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">🎯 Skills Explorer</h3>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
-            <X size={20} />
-          </button>
-        </div>
-
-        <div className="text-center mb-4">
-          <p className="text-gray-600 dark:text-gray-300 mb-2">
-            Click on skills to discover fun facts!
-          </p>
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 px-4 py-2 rounded-full">
-            <span className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
-              Skills Explored: {clickedSkills.size}/8
-            </span>
-          </div>
-        </div>
-
-        {/* Fun Facts Display */}
-        {(selectedSkill || hoveredSkill) && (selectedSkill || hoveredSkill) && skillFacts[(selectedSkill || hoveredSkill) as keyof typeof skillFacts] && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-2 border-blue-300 dark:border-blue-600 shadow-lg"
-          >
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
-                <span className="text-primary-600 dark:text-primary-400 text-sm font-bold">💡</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">
-                  {selectedSkill || hoveredSkill}
-                </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {skillFacts[(selectedSkill || hoveredSkill) as keyof typeof skillFacts]}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Interactive Skills Grid */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          {Object.keys(skillFacts).map((skill, index) => (
-            <motion.button
-              key={skill}
-              onClick={() => handleSkillClick(skill)}
-              onMouseEnter={() => setHoveredSkill(skill)}
-              onMouseLeave={() => setHoveredSkill(null)}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className={`p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                clickedSkills.has(skill)
-                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
-                  : hoveredSkill === skill || selectedSkill === skill
-                  ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-2 border-primary-300 dark:border-primary-600'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              {skill}
-            </motion.button>
-          ))}
-        </div>
-
-        {/* Completion Message */}
-        {clickedSkills.size === Object.keys(skillFacts).length && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center p-4 bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-lg"
-          >
-            <div className="text-2xl mb-2">🎉</div>
-            <p className="text-green-800 dark:text-green-200 font-medium">
-              Awesome! You've explored all the skills! Perfect attention to detail - a true QA trait! 🕵️‍♂️
-            </p>
-          </motion.div>
         )}
       </motion.div>
     </motion.div>
