@@ -73,7 +73,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-               className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <LinkedIn size={20} />
                 Connect on LinkedIn
@@ -99,7 +99,3 @@ const Contact = () => {
 };
 
 export default Contact;
-  )
-}
-  )
-}
