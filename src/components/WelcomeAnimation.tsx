@@ -130,15 +130,6 @@ const WelcomeAnimation = () => {
                 Let's Get Started! 🚀
               </motion.button>
 
-              {/* Australian flag decoration */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
-                className="mt-4 text-2xl"
-              >
-                🇦🇺
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>
