@@ -26,10 +26,10 @@ const Education = () => {
       description: 'PSM I certifies a foundational understanding of Scrum principles and effective application within Scrum Teams.',
     },
     {
-      name: 'AWS Certified Solutions Architect',
+      name: 'AWS Certified Cloud Practitioner',
       issuer: 'Amazon Web Services',
-      year: '2021',
-      description: 'Cloud architecture and DevOps integration for quality assurance.',
+      year: '2025',
+      description: 'AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.',
     },
   ];
 
