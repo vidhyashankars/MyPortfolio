@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 
 const WelcomeAnimation = () => {
   const [showWelcome, setShowWelcome] = useState(false);
+  const [countdown, setCountdown] = useState(8);
 
   useEffect(() => {
     // Check if welcome was shown today
@@ -24,16 +25,31 @@ const WelcomeAnimation = () => {
   useEffect(() => {
     // Auto-dismiss after 8 seconds if user doesn't interact
     if (showWelcome) {
+      // Countdown timer
+      const countdownInterval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            setShowWelcome(false);
+            return 8; // Reset for next time
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      
       const autoDismissTimer = setTimeout(() => {
         setShowWelcome(false);
       }, 8000);
       
-      return () => clearTimeout(autoDismissTimer);
+      return () => {
+        clearTimeout(autoDismissTimer);
+        clearInterval(countdownInterval);
+      };
     }
   }, [showWelcome]);
 
   const handleClose = () => {
     setShowWelcome(false);
+    setCountdown(8); // Reset countdown
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -74,11 +90,51 @@ const WelcomeAnimation = () => {
               onClick={handleClose}
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 z-20"
             >
               <X size={20} />
             </motion.button>
 
+            {/* Countdown Progress Ring */}
+            <div className="absolute top-4 right-16 z-20">
+              <div className="relative w-10 h-10">
+                {/* Background circle */}
+                <svg className="w-10 h-10 transform -rotate-90" viewBox="0 0 36 36">
+                  <path
+                    className="text-gray-300 dark:text-gray-600"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  {/* Progress circle */}
+                  <motion.path
+                    className="text-primary-500"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    fill="none"
+                    strokeLinecap="round"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    initial={{ strokeDasharray: "100, 100" }}
+                    animate={{ 
+                      strokeDasharray: `${(countdown / 8) * 100}, 100`,
+                    }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                  />
+                </svg>
+                {/* Countdown number */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.span
+                    key={countdown}
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    className="text-xs font-bold text-gray-600 dark:text-gray-300"
+                  >
+                    {countdown}
+                  </motion.span>
+                </div>
+              </div>
+            </div>
             {/* Content */}
             <div className="text-center relative z-10">
               {/* Kangaroo emoji with bounce animation */}
@@ -141,6 +197,15 @@ const WelcomeAnimation = () => {
                 Too right, let's dive in! 🚀
               </motion.button>
 
+              {/* Auto-dismiss info */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.4 }}
+                className="text-xs text-gray-400 dark:text-gray-500 mt-4"
+              >
+                This message will auto-close in {countdown} seconds
+              </motion.p>
             </div>
           </motion.div>
         </motion.div>
