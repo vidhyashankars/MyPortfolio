@@ -58,7 +58,7 @@ const Education = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2"
+            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center justify-center gap-2"
           >
             <GraduationCap className="text-primary-600 dark:text-primary-400" />
             Academic Background
@@ -117,7 +117,7 @@ const Education = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2"
+            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center justify-center gap-2"
           >
             <Award className="text-primary-600 dark:text-primary-400" />
             Professional Certifications
