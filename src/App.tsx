@@ -8,10 +8,12 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WelcomeAnimation from './components/WelcomeAnimation';
 
 function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+      <WelcomeAnimation />
       <Header />
       <Hero />
       <About />
