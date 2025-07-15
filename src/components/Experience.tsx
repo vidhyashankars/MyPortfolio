@@ -4,6 +4,12 @@ import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
+      {
+      title: 'Application Analyst',
+      company: 'NSW Police Force',
+      location: 'Sydney, Australia',
+      period:  'Oct 2024 - Present',
+    },
     {
       title: 'Test lead / Senior Test Analyst',
       company: 'Sherpa',
