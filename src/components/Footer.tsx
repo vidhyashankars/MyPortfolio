@@ -28,20 +28,6 @@ const Footer = () => {
               <p className="text-gray-300 dark:text-gray-300 font-medium text-lg">
                 Always learning, always testing, always growing.
               </p>
-              <div className="mt-3 overflow-hidden">
-                <motion.p 
-                  className="text-gray-400 dark:text-gray-400 font-medium text-base whitespace-nowrap"
-                  animate={{ x: [300, -300] }}
-                  transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  P.S. Don't forget to try the fun games via the floating button! 🎮 
-                  Test your QA knowledge and explore my skills in an interactive way! 😊
-                </motion.p>
-              </div>
             </div>
           </div>
 
