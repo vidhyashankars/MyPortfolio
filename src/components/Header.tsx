@@ -67,7 +67,7 @@ const Header = () => {
               repeatType: "reverse",
               ease: "easeInOut"
             }}
-            className="relative text-xl sm:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
+            className="relative text-xl sm:text-2xl font-bold text-gray-900 dark:text-white"
           >
             <span className="relative inline-block">
               QAMATE!
