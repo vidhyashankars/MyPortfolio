@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gamepad2, Brain, Zap, X } from 'lucide-react';
 import SkillsExplorerPage from './SkillsExplorerPage';
 
-const FloatingActionButton = () => {
+const GameButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showQuickGame, setShowQuickGame] = useState(false);
   const [showSkillsExplorer, setShowSkillsExplorer] = useState(false);
@@ -14,39 +14,121 @@ const FloatingActionButton = () => {
       icon: Brain,
       title: 'Skills Explorer',
       description: 'Full-page skill discovery',
-      action: () => setShowSkillsExplorer(true)
+      action: () => {
+        setShowSkillsExplorer(true);
+        setIsOpen(false);
+      }
     },
     {
       icon: Brain,
       title: 'QA Quiz',
       description: 'Test your knowledge',
-      action: () => setShowQuickGame(true)
+      action: () => {
+        setShowQuickGame(true);
+        setIsOpen(false);
+      }
     },
     {
       icon: Zap,
       title: 'Bug Hunt',
       description: 'Find the bugs!',
-      action: () => setShowBugHunt(true)
+      action: () => {
+        setShowBugHunt(true);
+        setIsOpen(false);
+      }
     }
   ];
 
   return (
     <>
-      {/* Quick Quiz Modal */}
+      {/* Games Button */}
+      <div className="relative">
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 transition-colors duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center"
+          aria-label="Games menu"
+        >
+          <motion.div
+            initial={false}
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300"
+          >
+            <Gamepad2 size={16} className="sm:w-5 sm:h-5" />
+          </motion.div>
+        </motion.button>
+
+        {/* Dropdown Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              {/* Backdrop */}
+              <div 
+                className="fixed inset-0 z-40" 
+                onClick={() => setIsOpen(false)}
+              />
+              
+              {/* Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"
+              >
+                <div className="p-3">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <Gamepad2 size={16} />
+                    Interactive Games
+                  </h3>
+                  
+                  <div className="space-y-1">
+                    {games.map((game, index) => (
+                      <motion.button
+                        key={index}
+                        onClick={game.action}
+                        whileHover={{ scale: 1.02, x: 4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full text-left p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 group"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="p-1.5 bg-primary-100 dark:bg-primary-900/30 rounded-lg group-hover:bg-primary-200 dark:group-hover:bg-primary-800/50 transition-colors">
+                            <game.icon className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                              {game.title}
+                            </h4>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                              {game.description}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Game Modals */}
       <AnimatePresence>
         {showQuickGame && (
           <QuickQuizModal onClose={() => setShowQuickGame(false)} />
         )}
       </AnimatePresence>
 
-      {/* Skills Explorer Modal */}
       <AnimatePresence>
         {showSkillsExplorer && (
           <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />
         )}
       </AnimatePresence>
 
-      {/* Bug Hunt Game Modal */}
       <AnimatePresence>
         {showBugHunt && (
           <BugHuntModal onClose={() => setShowBugHunt(false)} />
@@ -56,6 +138,7 @@ const FloatingActionButton = () => {
   );
 };
 
+// Quick Quiz Modal Component
 const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -263,7 +346,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
     return positions;
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (gameStarted && timeLeft > 0 && !gameComplete) {
       const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
       return () => clearTimeout(timer);
@@ -272,7 +355,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
     }
   }, [gameStarted, timeLeft, gameComplete]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (foundBugs.size === bugs.length) {
       setGameComplete(true);
     }
@@ -378,7 +461,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
                 Close
               </button>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* Bug Hunt Area */}
@@ -412,4 +495,4 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-export default FloatingActionButton;
+export default GameButton;
