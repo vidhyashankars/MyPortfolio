@@ -74,7 +74,7 @@ const Blogs = () => {
             🚀
           </motion.div>
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Blog Section Coming Soon!</h3>
-          <p className="text-base sm:text-xl text-primary-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-primary-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
             I'm working on some fantastic content to share my QA knowledge and experiences. 
             Stay tuned for in-depth articles, tutorials, and insights!
           </p>
@@ -126,7 +126,7 @@ const Blogs = () => {
                   </div>
                   
                   <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">{topic.title}</h4>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed">{topic.description}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed">{topic.description}</p>
                   
                   <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
                     <Clock size={14} className="sm:w-4 sm:h-4" />
@@ -149,7 +149,7 @@ const Blogs = () => {
           <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Want to be notified when I publish new content?
           </h3>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto">
             Connect with me on LinkedIn to stay updated on my latest QA insights, 
             tutorials, and industry observations. I'll share valuable content that can help 
             advance your testing career!

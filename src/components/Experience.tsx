@@ -61,7 +61,7 @@ const Experience = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Professional <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Experience</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A decade of delivering quality software through comprehensive testing strategies
           </p>
         </motion.div>
@@ -95,8 +95,8 @@ const Experience = () => {
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
-                        <h4 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{exp.company}</h4>
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
+                        <h4 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{exp.company}</h4>
                       </div>
                       <Briefcase className="text-primary-600 dark:text-primary-400 w-6 h-6" />
                     </div>
@@ -104,11 +104,11 @@ const Experience = () => {
                     <div className="flex items-center gap-4 mb-4 text-gray-600 dark:text-gray-300">
                       <div className="flex items-center gap-1">
                         <Calendar size={16} />
-                        <span className="text-sm">{exp.period}</span>
+                        <span className="text-xs sm:text-sm">{exp.period}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPin size={16} />
-                        <span className="text-sm">{exp.location}</span>
+                        <span className="text-xs sm:text-sm">{exp.location}</span>
                       </div>
                     </div>
 

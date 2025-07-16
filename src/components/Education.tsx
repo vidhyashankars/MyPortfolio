@@ -46,7 +46,7 @@ const Education = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Education & <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Certifications</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Continuous learning and professional development in quality assurance
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ const Education = () => {
             viewport={{ once: true }}
             className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center justify-center gap-2"
           >
-            <GraduationCap className="text-primary-600 dark:text-primary-400" />
+            <GraduationCap className="text-primary-600 dark:text-primary-400 w-6 h-6 sm:w-7 sm:h-7" />
             Academic Background
           </motion.h3>
 
@@ -81,17 +81,17 @@ const Education = () => {
                     className="w-full md:w-6/12"
                   >
                     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">{edu.degree}</h4>
-                      <h5 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">{edu.institution}</h5>
+                      <h4 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">{edu.degree}</h4>
+                      <h5 className="text-sm sm:text-base md:text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">{edu.institution}</h5>
                       
                       <div className="flex items-center gap-4 mb-4 text-gray-600 dark:text-gray-300">
                         <div className="flex items-center gap-1">
-                          <Calendar size={16} />
-                          <span className="text-sm">{edu.period}</span>
+                          <Calendar size={14} className="sm:w-4 sm:h-4" />
+                          <span className="text-xs sm:text-sm">{edu.period}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <MapPin size={16} />
-                          <span className="text-sm">{edu.location}</span>
+                          <MapPin size={14} className="sm:w-4 sm:h-4" />
+                          <span className="text-xs sm:text-sm">{edu.location}</span>
                         </div>
                       </div>
 
@@ -113,7 +113,7 @@ const Education = () => {
             viewport={{ once: true }}
             className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center justify-center gap-2"
           >
-            <Award className="text-primary-600 dark:text-primary-400" />
+            <Award className="text-primary-600 dark:text-primary-400 w-6 h-6 sm:w-7 sm:h-7" />
             Professional Certifications
           </motion.h3>
 
@@ -126,13 +126,13 @@ const Education = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 dark:text-white">{cert.name}</h4>
               >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">{cert.name}</h4>
                   <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-2 py-1 rounded-md text-xs font-medium">
-                    {cert.year}
-                  </span>
+                  <h5 className="text-sm sm:text-base text-primary-600 dark:text-primary-400 font-semibold mb-2">{cert.issuer}</h5>
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">{cert.description}</p>
                 </div>
                 <h5 className="text-primary-600 dark:text-primary-400 font-semibold mb-2">{cert.issuer}</h5>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{cert.description}</p>

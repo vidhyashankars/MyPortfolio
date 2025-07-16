@@ -37,7 +37,7 @@ const Contact = () => {
                 Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
                 Ready to bring that Aussie spirit to your next quality challenge!
               </p>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
                 Looking for NEW QA OPPORTUNITIES, testing strategy consultation, or want to discuss 
                 quality assurance best practices? Let's have a yarn!
               </p>
@@ -133,7 +133,7 @@ const Contact = () => {
               <span className="text-2xl">🔍</span>
               Found an Issue?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               Help me improve this website! If you spot any bugs, usability issues, or have suggestions, 
               I'd love to hear from you. As a QA professional, I appreciate thorough feedback!
             </p>

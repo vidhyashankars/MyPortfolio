@@ -80,7 +80,7 @@ const Skills = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Technical <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Skills</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Comprehensive expertise across testing frameworks, tools, and methodologies
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const Skills = () => {
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
                   <category.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
               </div>
 
               <div className="space-y-4">
@@ -114,8 +114,8 @@ const Skills = () => {
                     className="space-y-2"
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
+                      <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+                      <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <motion.div
