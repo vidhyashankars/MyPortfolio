@@ -151,10 +151,10 @@ const Hero = () => {
               <div className="marquee-container">
                 <div className="marquee-content">
                   <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-3 md:px-6">
-                    P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
+                    P.S. Don't forget to try the fun games via the games menu in the header! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
                   </span>
                   <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-3 md:px-6">
-                    P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
+                    P.S. Don't forget to try the fun games via the games menu in the header! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
                   </span>
                 </div>
               </div>
