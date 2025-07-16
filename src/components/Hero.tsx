@@ -13,13 +13,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-4 sm:mb-6"
+            className="mb-6 sm:mb-8"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 md:mb-10"
             >
               <span className="bg-gradient-to-r from-black via-primary-600 to-primary-800 dark:from-primary-400 dark:via-primary-300 dark:to-primary-200 bg-clip-text text-transparent">
                 Quality Assurance
@@ -33,7 +33,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Hi, I'm <span className="font-semibold text-gray-900 dark:text-white">Vid</span> - A passionate QA professional with over 
             <span className="font-semibold text-primary-600 dark:text-primary-400"> 10 years of experience</span> in ensuring software excellence 
@@ -44,7 +44,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-4 sm:mb-6 max-w-5xl mx-auto px-1 sm:px-2"
+            className="mb-8 sm:mb-10 max-w-5xl mx-auto px-1 sm:px-2"
           >
             <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
               {[
@@ -92,7 +92,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2 sm:px-4 mb-3 sm:mb-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2 sm:px-4 mb-8 sm:mb-10"
           >
             <motion.button
               onClick={() => {
@@ -145,7 +145,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
-            className="text-center px-2 sm:px-4 mb-2 sm:mb-3"
+            className="text-center px-2 sm:px-4 mb-8 sm:mb-12"
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
               <div className="marquee-container">
