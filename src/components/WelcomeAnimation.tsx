@@ -30,7 +30,7 @@ const WelcomeAnimation = () => {
         setCountdown((prev) => {
           if (prev <= 1) {
             setShowWelcome(false);
-            return 8; // Reset for next time
+            return 15; // Reset for next time
           }
           return prev - 1;
         });
