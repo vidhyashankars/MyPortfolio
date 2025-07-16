@@ -461,7 +461,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
                 Close
               </button>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Bug Hunt Area */}
