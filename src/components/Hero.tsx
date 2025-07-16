@@ -82,6 +82,7 @@ const Hero = () => {
                 <div className="text-2xl mb-2">⚡</div>
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quick Response</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">I'll reach out within 3 hours max!</p>
+              </motion.div>
               </div>
             </div>
           </motion.div>
