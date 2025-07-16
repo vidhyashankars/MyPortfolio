@@ -55,9 +55,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">🚀</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Ready to Start</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Available immediately for new opportunities</p>
+                <div className="text-2xl mb-2">🇦🇺</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Sydney Based</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Local Australian QA professional</p>
               </motion.div>
               
               <motion.div
@@ -67,9 +67,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">🇦🇺</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Sydney Based</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Local Australian QA professional</p>
+                <div className="text-2xl mb-2">⚡</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quick Response</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">I'll reach out within 3 hours max!</p>
               </motion.div>
               
               <motion.div
@@ -79,9 +79,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">⚡</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quick Response</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">I'll reach out within 3 hours max!</p>
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quality Focus</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Passionate about delivering excellence</p>
               </motion.div>
             </div>
           </motion.div>
