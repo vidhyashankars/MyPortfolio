@@ -69,57 +69,34 @@ const Header = () => {
             }}
             className="relative text-xl sm:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
           >
-          QAMATE!
-          
-          {/* Kangaroo emoji that bounces around the text */}
+          <span>QAMATE!</span>
           <motion.span
             animate={{ 
-              x: [0, 20, -20, 0],
-              y: [0, -10, -5, 0],
-              rotate: [0, 15, -15, 0]
-            }}
-            transition={{ 
-              duration: 3,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut"
-            }}
-            className="inline-block ml-2 text-lg"
-          >
-            🦘
-          </motion.span>
-          
-          {/* Sparkle effects */}
-          <motion.span
-            animate={{ 
-              scale: [0, 1, 0],
-              rotate: [0, 180, 360],
-              opacity: [0, 1, 0]
+              y: [0, -8, 0],
+              rotate: [0, 10, -10, 0]
             }}
             transition={{ 
               duration: 2,
               repeat: Infinity,
-              delay: 0.5
+              ease: "easeInOut"
             }}
-            className="inline-block ml-1 text-sm"
+            className="inline-block ml-2 text-xl"
           >
-            ✨
+            🦘
           </motion.span>
-          
           <motion.span
             animate={{ 
-              scale: [0, 1, 0],
-              rotate: [0, -180, -360],
-              opacity: [0, 1, 0]
+              scale: [1, 1.2, 1],
+              rotate: [0, 360]
             }}
             transition={{ 
-              duration: 2.5,
+              duration: 3,
               repeat: Infinity,
-              delay: 1.5
+              ease: "easeInOut"
             }}
-            className="inline-block ml-1 text-sm"
+            className="inline-block ml-1 text-base"
           >
-            ⭐
+            ✨
           </motion.span>
           </motion.div>
 
