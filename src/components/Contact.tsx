@@ -119,7 +119,7 @@ const Contact = () => {
         >
           <div className="text-center">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-2">
-              <span className="text-2xl">🐛</span>
+              <span className="text-2xl">🔍</span>
               Found an Issue?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
@@ -136,7 +136,7 @@ const Contact = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <span className="text-xl">🐛</span>
+              <span className="text-xl">📝</span>
               Report a Bug
             </motion.button>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
