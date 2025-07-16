@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gamepad2, Brain, Zap, X } from 'lucide-react';
 import SkillsExplorerPage from './SkillsExplorerPage';
@@ -112,19 +113,28 @@ const GameButton = () => {
       {/* Game Modals */}
       <AnimatePresence>
         {showQuickGame && (
-          <QuickQuizModal onClose={() => setShowQuickGame(false)} />
+          createPortal(
+            <QuickQuizModal onClose={() => setShowQuickGame(false)} />,
+            document.body
+          )
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {showSkillsExplorer && (
-          <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />
+          createPortal(
+            <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />,
+            document.body
+          )
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {showBugHunt && (
-          <BugHuntModal onClose={() => setShowBugHunt(false)} />
+          createPortal(
+            <BugHuntModal onClose={() => setShowBugHunt(false)} />,
+            document.body
+          )
         )}
       </AnimatePresence>
     </>
@@ -174,19 +184,31 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+    <div
+      className="fixed inset-0 z-[99999]"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 99999
+      }}
     >
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full max-h-[80vh] overflow-y-auto shadow-2xl relative z-[10000]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+        onClick={(e) => e.target === e.currentTarget && onClose()}
       >
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full max-h-[80vh] overflow-y-auto shadow-2xl relative"
+          onClick={(e) => e.stopPropagation()}
+        >
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">🧠 Quick QA Quiz</h3>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
@@ -269,8 +291,9 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
             </div>
           </div>
         )}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -368,19 +391,31 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+    <div
+      className="fixed inset-0 z-[99999]"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 99999
+      }}
     >
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl relative z-[10000]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+        onClick={(e) => e.target === e.currentTarget && onClose()}
       >
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl relative"
+          onClick={(e) => e.stopPropagation()}
+        >
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white flex-1">🐛 Bug Hunt</h3>
           <motion.button 
@@ -485,8 +520,9 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             </div>
           )}
         </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

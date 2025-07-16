@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trophy, Star, Zap } from 'lucide-react';
 
@@ -49,14 +50,20 @@ const EasterEggs = () => {
       {/* Snake Game Modal */}
       <AnimatePresence>
         {showSnakeGame && (
-          <SnakeGameModal onClose={() => setShowSnakeGame(false)} />
+          createPortal(
+            <SnakeGameModal onClose={() => setShowSnakeGame(false)} />,
+            document.body
+          )
         )}
       </AnimatePresence>
 
       {/* Memory Game Modal */}
       <AnimatePresence>
         {showMemoryGame && (
-          <MemoryGameModal onClose={() => setShowMemoryGame(false)} />
+          createPortal(
+            <MemoryGameModal onClose={() => setShowMemoryGame(false)} />,
+            document.body
+          )
         )}
       </AnimatePresence>
     </>
