@@ -145,7 +145,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
-            className="flex justify-center px-2 sm:px-4 mb-8 sm:mb-12"
+            className="flex justify-center px-2 sm:px-4 mb-16 sm:mb-20 md:mb-12"
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl overflow-hidden">
               <div className="marquee-container">
