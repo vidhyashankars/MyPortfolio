@@ -56,10 +56,73 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
+            animate={{ 
+              y: [0, -3, 0],
+              rotate: [0, 1, -1, 0]
+            }}
+            transition={{ 
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}
+            className="relative text-xl sm:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
           >
-            QAMATE!
+            <span className="relative inline-block">
+              QAMATE!
+              {/* Kangaroo emoji that bounces around the text */}
+              <motion.span
+                animate={{ 
+                  x: [0, 15, -15, 0],
+                  y: [0, -8, -4, 0],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                className="absolute -top-1 -right-6 text-lg"
+              >
+                🦘
+              </motion.span>
+              
+              {/* Sparkle effects */}
+              <motion.span
+                animate={{ 
+                  scale: [0, 1, 0],
+                  rotate: [0, 180, 360],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1
+                }}
+                className="absolute -top-2 left-0 text-sm"
+              >
+                ✨
+              </motion.span>
+              
+              <motion.span
+                animate={{ 
+                  scale: [0, 1, 0],
+                  rotate: [0, -180, -360],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{ 
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: 1.8
+                }}
+                className="absolute -bottom-1 right-2 text-sm"
+              >
+                ⭐
+              </motion.span>
+            </span>
           </motion.div>
 
           <div className="hidden lg:flex items-center space-x-8">
