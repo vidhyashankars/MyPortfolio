@@ -140,34 +140,12 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Bug Report Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-            className="mb-3 sm:mb-4 text-center px-2 sm:px-4"
-          >
-            <motion.button
-              onClick={() => {
-                const subject = encodeURIComponent('Bug Report - Portfolio Website');
-                const body = encodeURIComponent(`Hi Vid,\n\nI found an issue on your portfolio website:\n\nDevice: ${navigator.userAgent}\nBrowser: ${navigator.appName}\nScreen Size: ${window.innerWidth}x${window.innerHeight}\n\nIssue Description:\n[Please describe the bug you found]\n\nSteps to Reproduce:\n1. \n2. \n3. \n\nExpected Result:\n[What should happen]\n\nActual Result:\n[What actually happened]\n\nThanks for helping improve the site!`);
-                window.open(`https://www.linkedin.com/messaging/compose/?recipient=vidhyashankarn&subject=${subject}&body=${body}`, '_blank');
-              }}
-              whileHover={{ scale: 1.02, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200/50 dark:border-gray-600/50 hover:border-red-300 dark:hover:border-red-400"
-            >
-              <span className="text-red-500">🐛</span>
-              Report a Bug
-            </motion.button>
-          </motion.div>
-
           {/* Games promotion text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.0 }}
-            className="text-center px-2 sm:px-4 mb-3 sm:mb-4"
+            transition={{ duration: 0.8, delay: 1.8 }}
+            className="text-center px-2 sm:px-4 mb-2 sm:mb-3"
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
               <div className="marquee-container">
@@ -186,8 +164,8 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2.2 }}
-            className="absolute bottom-1 sm:bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2"
+            transition={{ duration: 1, delay: 2.0 }}
+            className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
@@ -200,7 +178,7 @@ const Hero = () => {
         </div>
         
         {/* Minimal spacing to ensure arrow doesn't overlap */}
-        <div className="h-8 sm:h-10 md:h-12"></div>
+        <div className="h-6 sm:h-8 md:h-10"></div>
         </div>
     </section>
   );
