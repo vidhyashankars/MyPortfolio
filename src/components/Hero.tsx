@@ -4,7 +4,7 @@ import { ArrowDown, Mail, Linkedin, Github } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20 pb-8 px-3 sm:px-4 md:px-6 lg:px-8" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12 sm:pt-16 pb-4 px-3 sm:px-4 md:px-6 lg:px-8" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-900 dark:via-black dark:to-gray-800"></div>
       
       <div className="max-w-7xl mx-auto relative z-10 w-full">
@@ -13,13 +13,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6"
             >
               <span className="bg-gradient-to-r from-black via-primary-600 to-primary-800 dark:from-primary-400 dark:via-primary-300 dark:to-primary-200 bg-clip-text text-transparent">
                 Quality Assurance
@@ -33,7 +33,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Hi, I'm <span className="font-semibold text-gray-900 dark:text-white">Vid</span> - A passionate QA professional with over 
             <span className="font-semibold text-primary-600 dark:text-primary-400"> 10 years of experience</span> in ensuring software excellence 
@@ -44,7 +44,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-6 sm:mb-8 max-w-5xl mx-auto px-1 sm:px-2"
+            className="mb-4 sm:mb-6 max-w-5xl mx-auto px-1 sm:px-2"
           >
             <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
               {[
@@ -92,7 +92,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2 sm:px-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2 sm:px-4 mb-3 sm:mb-4"
           >
             <motion.button
               onClick={() => {
@@ -101,7 +101,7 @@ const Hero = () => {
               }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Mail size={20} />
               Get In Touch
@@ -140,20 +140,42 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* Bug Report Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
+            className="mb-3 sm:mb-4 text-center px-2 sm:px-4"
+          >
+            <motion.button
+              onClick={() => {
+                const subject = encodeURIComponent('Bug Report - Portfolio Website');
+                const body = encodeURIComponent(`Hi Vid,\n\nI found an issue on your portfolio website:\n\nDevice: ${navigator.userAgent}\nBrowser: ${navigator.appName}\nScreen Size: ${window.innerWidth}x${window.innerHeight}\n\nIssue Description:\n[Please describe the bug you found]\n\nSteps to Reproduce:\n1. \n2. \n3. \n\nExpected Result:\n[What should happen]\n\nActual Result:\n[What actually happened]\n\nThanks for helping improve the site!`);
+                window.open(`https://www.linkedin.com/messaging/compose/?recipient=vidhyashankarn&subject=${subject}&body=${body}`, '_blank');
+              }}
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200/50 dark:border-gray-600/50 hover:border-red-300 dark:hover:border-red-400"
+            >
+              <span className="text-red-500">🐛</span>
+              Report a Bug
+            </motion.button>
+          </motion.div>
+
           {/* Games promotion text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-center px-2 sm:px-4 mb-4 sm:mb-0"
+            transition={{ duration: 0.8, delay: 2.0 }}
+            className="text-center px-2 sm:px-4 mb-3 sm:mb-4"
           >
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1.5 sm:py-2 md:py-3 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
               <div className="marquee-container">
                 <div className="marquee-content">
-                  <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-4 md:px-8">
+                  <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-3 md:px-6">
                     P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
                   </span>
-                  <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-4 md:px-8">
+                  <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-3 md:px-6">
                     P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
                   </span>
                 </div>
@@ -164,21 +186,21 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.4 }}
-            className="absolute bottom-2 sm:bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2"
+            transition={{ duration: 1, delay: 2.2 }}
+            className="absolute bottom-1 sm:bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="text-gray-400 dark:text-gray-500"
             >
-              <ArrowDown size={20} className="sm:w-6 sm:h-6" />
+              <ArrowDown size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </motion.div>
           </motion.div>
         </div>
         
-        {/* Extra spacing to ensure arrow doesn't overlap */}
-        <div className="h-16 sm:h-12 md:h-20"></div>
+        {/* Minimal spacing to ensure arrow doesn't overlap */}
+        <div className="h-8 sm:h-10 md:h-12"></div>
         </div>
     </section>
   );
