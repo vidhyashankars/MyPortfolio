@@ -174,50 +174,52 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div
+      className="fixed inset-0 z-[99999]"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        zIndex: 99999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.95)',
-        backdropFilter: 'blur(4px)',
-        padding: '16px'
+        zIndex: 99999
       }}
-      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '16px',
-          padding: '24px',
-          maxWidth: '448px',
-          width: '100%',
-          maxHeight: '80vh',
-          overflowY: 'auto',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          position: 'relative',
-          zIndex: 100000
-        }}
-        className="bg-white dark:bg-gray-800"
-        onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-white dark:bg-gray-900 overflow-y-auto"
       >
+        {/* Header */}
+        <div className="sticky top-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
+          <div className="max-w-4xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <motion.button
+                  onClick={onClose}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <X size={20} className="text-gray-600 dark:text-gray-300" />
+                </motion.button>
+                <div>
+                  <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">🧠 QA Quiz</h1>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">Test your QA knowledge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">🧠 Quick QA Quiz</h3>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-            <X size={20} />
-          </button>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Quick QA Quiz</h3>
         </div>
 
         {!showResult ? (
-          <div>
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
             <div className="mb-4">
               <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
                 <span>Question {currentQuestion + 1} of {questions.length}</span>
@@ -225,7 +227,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                 <div 
-                  className="bg-primary-600 h-2 rounded-full transition-all duration-300"
+                  className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
                 />
               </div>
@@ -242,7 +244,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
                   onClick={() => handleAnswer(index)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full text-left p-3 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200 text-gray-900 dark:text-white"
+                  className="w-full text-left p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 text-gray-900 dark:text-white"
                 >
                   {option}
                 </motion.button>
@@ -250,7 +252,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
             </div>
           </div>
         ) : (
-          <div className="text-center">
+          <div className="text-center bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -278,19 +280,20 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
             <div className="flex gap-3">
               <button
                 onClick={resetQuiz}
-                className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
+                className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Try Again
               </button>
               <button
                 onClick={onClose}
-                className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               >
                 Close
               </button>
             </div>
           </div>
         )}
+        </div>
       </motion.div>
     </div>
   );
