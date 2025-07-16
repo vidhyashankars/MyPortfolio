@@ -130,31 +130,19 @@ const SnakeGameModal = ({ onClose }: { onClose: () => void }) => {
   }, [direction, food, gameOver]);
 
   return (
-    <div
-      className="fixed inset-0 z-[99999]"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 99999
-      }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
-        onClick={(e) => e.target === e.currentTarget && onClose()}
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.5, opacity: 0 }}
+        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl relative z-[10000]"
       >
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.5, opacity: 0 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
-          onClick={(e) => e.stopPropagation()}
-        >
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">🐍 QA Snake Game</h3>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
@@ -190,9 +178,8 @@ const SnakeGameModal = ({ onClose }: { onClose: () => void }) => {
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-4">
           Use arrow keys to move. Find the Konami code for this game!
         </p>
-        </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -257,19 +244,31 @@ const MemoryGameModal = ({ onClose }: { onClose: () => void }) => {
   }, [cards]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+    <div
+      className="fixed inset-0 z-[99999]"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 99999
+      }}
     >
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl relative z-[10000]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+        onClick={(e) => e.target === e.currentTarget && onClose()}
       >
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
+          onClick={(e) => e.stopPropagation()}
+        >
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">🧠 QA Memory Test</h3>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
@@ -312,8 +311,9 @@ const MemoryGameModal = ({ onClose }: { onClose: () => void }) => {
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-4">
           Triple-click the logo to access this game!
         </p>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
