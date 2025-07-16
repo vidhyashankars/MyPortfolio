@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Custom Properties for viewport height fix */
+:root {
+  --vh: 1vh;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix for iOS Safari viewport height issues */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 @layer components {
   .marquee-container {
     width: 100%;
@@ -10,7 +41,7 @@
   
   .marquee-content {
     display: flex;
-    animation: marquee 20s linear infinite;
+    animation: marquee 25s linear infinite;
   }
   
   @keyframes marquee {
@@ -20,5 +51,42 @@
     100% {
       transform: translateX(-100%);
     }
+  }
+  
+  /* Responsive marquee speed */
+  @media (max-width: 640px) {
+    .marquee-content {
+      animation: marquee 20s linear infinite;
+    }
+  }
+}
+
+/* Fix for Android Chrome address bar height changes */
+@media screen and (max-width: 768px) {
+  .min-h-screen {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* Prevent zoom on input focus for iOS */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Better scrolling on iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for Edge browser compatibility */
+@supports (-ms-ime-align: auto) {
+  .backdrop-blur-sm {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .dark .backdrop-blur-sm {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
