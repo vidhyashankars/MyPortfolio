@@ -58,24 +58,52 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/vidhyashankarn"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
+                aria-label="LinkedIn Profile"
               >
-                <LinkedIn size={20} />
-                Connect on LinkedIn
+                <LinkedIn size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+                
+                {/* Background glow effect */}
+                <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                
+                {/* Ripple effect on hover */}
+                <motion.div
+                  className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
+                  initial={{ scale: 0 }}
+                  whileHover={{ 
+                    scale: 1,
+                    opacity: [0, 0.3, 0],
+                    transition: { duration: 0.6 }
+                  }}
+                />
               </motion.a>
               
               <motion.a
                 href="https://github.com/im-vidhyashankar"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
+                aria-label="GitHub Profile"
               >
-                <Github size={20} />
-                View GitHub
+                <Github size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+                
+                {/* Background glow effect */}
+                <div className="absolute inset-0 bg-gray-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                
+                {/* Ripple effect on hover */}
+                <motion.div
+                  className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
+                  initial={{ scale: 0 }}
+                  whileHover={{ 
+                    scale: 1,
+                    opacity: [0, 0.3, 0],
+                    transition: { duration: 0.6 }
+                  }}
+                />
               </motion.a>
             </motion.div>
           </motion.div>
