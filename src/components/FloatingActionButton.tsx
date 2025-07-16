@@ -304,10 +304,16 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
         className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-2xl w-full relative"
       >
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">🐛 Bug Hunt</h3>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white flex-1">🐛 Bug Hunt</h3>
+          <motion.button 
+            onClick={onClose} 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-800 dark:hover:text-white transition-all duration-200 flex-shrink-0 z-10"
+            aria-label="Close Bug Hunt"
+          >
             <X size={20} />
-          </button>
+          </motion.button>
         </div>
 
         <div className="text-center mb-4">
