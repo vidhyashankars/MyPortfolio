@@ -221,8 +221,8 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="text-center"
             >
-              <div className="text-2xl mb-2">🌏</div>
-              <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
+              <div className="text-2xl mb-2">⬇️</div>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Explore below</p>
             </motion.div>
           </motion.div>
         </div>
