@@ -32,14 +32,14 @@ const FloatingActionButton = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-40 mb-16">
+      <div className="fixed bottom-6 right-4 z-40 mb-20 sm:mb-16 sm:right-6">
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute bottom-16 right-0 space-y-3"
+              className="absolute bottom-16 right-0 space-y-2 sm:space-y-3"
             >
               {games.map((game, index) => (
                 <motion.button
@@ -49,12 +49,12 @@ const FloatingActionButton = () => {
                   exit={{ opacity: 0, x: 50 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={game.action}
-                  className="flex items-center gap-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="flex items-center gap-2 sm:gap-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-3 py-2 sm:px-4 sm:py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  <game.icon size={20} className="text-primary-600 dark:text-primary-400" />
+                  <game.icon size={18} className="sm:w-5 sm:h-5 text-primary-600 dark:text-primary-400" />
                   <div className="text-left">
-                    <div className="font-semibold text-sm">{game.title}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">{game.description}</div>
+                    <div className="font-semibold text-xs sm:text-sm">{game.title}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">{game.description}</div>
                   </div>
                 </motion.button>
               ))}
@@ -66,13 +66,13 @@ const FloatingActionButton = () => {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         >
           <motion.div
             animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            {isOpen ? <X size={24} /> : <Gamepad2 size={24} />}
+            {isOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Gamepad2 size={20} className="sm:w-6 sm:h-6" />}
           </motion.div>
         </motion.button>
       </div>

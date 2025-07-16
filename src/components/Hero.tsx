@@ -145,9 +145,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-center px-2 sm:px-4"
+            className="mt-4 sm:mt-6 md:mt-8 text-center px-2 sm:px-4 mb-4 sm:mb-0"
           >
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1.5 sm:py-2 md:py-3 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1.5 sm:py-2 md:py-3 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
               <div className="marquee-container">
                 <div className="marquee-content">
                   <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-4 md:px-8">
@@ -178,7 +178,7 @@ const Hero = () => {
         </div>
         
         {/* Extra spacing to ensure arrow doesn't overlap */}
-        <div className="h-8 sm:h-12 md:h-20"></div>
+        <div className="h-16 sm:h-12 md:h-20"></div>
         </div>
     </section>
   );
