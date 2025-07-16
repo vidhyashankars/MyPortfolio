@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-center md:text-left">
                 <p className="text-gray-400 dark:text-gray-500 text-sm mb-2">
-                © 2024 Vinu. All rights reserved. Built with passion for quality.
+                © 2024 Vid. All rights reserved. Built with passion for quality.
                 </p>
               </div>
               
