@@ -57,7 +57,7 @@ const Hero = () => {
               >
                 <div className="text-2xl mb-2">🇦🇺</div>
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">Sydney Based</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Local Australian QA professional</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
               </motion.div>
               
               <motion.div
@@ -221,7 +221,7 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="text-center"
             >
-              <div className="text-2xl mb-2">🏢</div>
+              <div className="text-2xl mb-2">🌏</div>
               <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
             </motion.div>
           </motion.div>
