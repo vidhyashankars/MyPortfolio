@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import FloatingActionButton from './FloatingActionButton';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -74,10 +75,12 @@ const Header = () => {
               </motion.a>
             ))}
             </nav>
+            <FloatingActionButton />
             <ThemeToggle />
           </div>
 
           <div className="lg:hidden flex items-center space-x-3">
+            <FloatingActionButton />
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
