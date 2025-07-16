@@ -42,7 +42,7 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
           >
-            Your QA!
+            QAMATE!
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
