@@ -136,6 +136,9 @@ const Blogs = () => {
                   </div>
                 </div>
               </motion.div>
+          )
+          )
+          }
 
         {/* Newsletter Signup Teaser */}
         <motion.div
