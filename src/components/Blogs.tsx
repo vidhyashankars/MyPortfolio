@@ -35,19 +35,19 @@ const Blogs = () => {
   ];
 
   return (
-    <section id="blogs" className="py-20 bg-white dark:bg-black">
+    <section id="blogs" className="py-16 sm:py-20 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             QA <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Insights</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Sharing knowledge, experiences, and insights from the world of Quality Assurance
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ const Blogs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-2xl p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center mb-8 sm:mb-12"
         >
           <motion.div
             animate={{ 
@@ -69,13 +69,12 @@ const Blogs = () => {
               repeat: Infinity,
               repeatType: "reverse"
             }}
-            className="bg-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full backdrop-blur-sm"
-            className="text-6xl mb-4"
+            className="text-4xl sm:text-6xl mb-4"
           >
             🚀
           </motion.div>
-          <h3 className="text-3xl font-bold mb-4">Blog Section Coming Soon!</h3>
-          <p className="text-xl text-primary-100 mb-6 max-w-2xl mx-auto">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Blog Section Coming Soon!</h3>
+          <p className="text-base sm:text-xl text-primary-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
             I'm working on some fantastic content to share my QA knowledge and experiences. 
             Stay tuned for in-depth articles, tutorials, and insights!
           </p>
@@ -83,27 +82,26 @@ const Blogs = () => {
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="bg-white/20 px-6 py-3 rounded-full backdrop-blur-sm"
+              className="bg-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full backdrop-blur-sm"
             >
-              <span className="font-semibold">Expected Launch: Q3 2025</span>
+              <span className="text-sm sm:text-base font-semibold">Expected Launch: Q3 2025</span>
             </motion.div>
           </div>
-        </div>
         </motion.div>
 
         {/* Upcoming Topics Preview */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <motion.h3
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+            className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center"
           >
             What's Coming Up
           </motion.h3>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {upcomingTopics.map((topic, index) => (
               <motion.div
                 key={index}
@@ -112,33 +110,33 @@ const Blogs = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                className="bg-gray-50 dark:bg-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300 relative overflow-hidden"
               >
                 {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-primary-500/10 rounded-full -translate-y-10 translate-x-10"></div>
+                <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-primary-500/10 rounded-full -translate-y-8 sm:-translate-y-10 translate-x-8 sm:translate-x-10"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-                      <topic.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="flex items-start justify-between mb-3 sm:mb-4">
+                    <div className="p-1.5 sm:p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+                      <topic.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400" />
                     </div>
-                    <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-3 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
                       {topic.category}
                     </span>
                   </div>
                   
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{topic.title}</h4>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{topic.description}</p>
+                  <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">{topic.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed">{topic.description}</p>
                   
                   <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
-                    <Clock size={16} />
-                    <span className="text-sm font-medium">{topic.estimatedDate}</span>
+                    <Clock size={14} className="sm:w-4 sm:h-4" />
+                    <span className="text-xs sm:text-sm font-medium">{topic.estimatedDate}</span>
                   </div>
                 </div>
               </motion.div>
-          )
-          )
-          }
+            ))}
+          </div>
+        </div>
 
         {/* Newsletter Signup Teaser */}
         <motion.div
@@ -146,12 +144,12 @@ const Blogs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-xl p-8 text-center"
+          className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-lg sm:rounded-xl p-6 sm:p-8 text-center"
         >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Want to be notified when I publish new content?
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto">
             Connect with me on LinkedIn to stay updated on my latest QA insights, 
             tutorials, and industry observations. I'll share valuable content that can help 
             advance your testing career!
@@ -162,9 +160,9 @@ const Blogs = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <BookOpen size={20} />
+            <BookOpen size={16} className="sm:w-5 sm:h-5" />
             Follow for Updates
           </motion.a>
         </motion.div>
