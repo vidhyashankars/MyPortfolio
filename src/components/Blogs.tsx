@@ -88,6 +88,7 @@ const Blogs = () => {
               <span className="font-semibold">Expected Launch: Q3 2025</span>
             </motion.div>
           </div>
+        </div>
         </motion.div>
 
         {/* Upcoming Topics Preview */}
