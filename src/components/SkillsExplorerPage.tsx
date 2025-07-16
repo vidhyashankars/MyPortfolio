@@ -130,7 +130,8 @@ const SkillsExplorerPage: React.FC<SkillsExplorerPageProps> = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-white dark:bg-gray-900 z-[200] overflow-y-auto"
+      className="fixed inset-0 bg-white dark:bg-gray-900 z-[9999] overflow-y-auto"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
     >
       {/* Header */}
       <div className="sticky top-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
