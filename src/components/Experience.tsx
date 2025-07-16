@@ -61,7 +61,7 @@ const Experience = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Professional <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Experience</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A decade of delivering quality software through comprehensive testing strategies
           </p>
         </motion.div>
@@ -112,8 +112,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
-
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
+                    <h4 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{exp.company}</h4>
                   </div>
                 </motion.div>
 

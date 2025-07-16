@@ -53,23 +53,23 @@ const Header = () => {
         isScrolled ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent"
           >
             QAMATE!
           </motion.div>
 
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <nav className="flex space-x-4 xl:space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
+            <nav className="flex space-x-6">
             {navItems.map((item) => (
               <motion.a
                 key={item.href}
                 href={item.href}
                 whileHover={{ scale: 1.05 }}
-                className="text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium whitespace-nowrap"
+                className="text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium whitespace-nowrap"
               >
                 {item.label}
               </motion.a>
@@ -81,7 +81,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="lg:hidden flex items-center space-x-3">
+          <div className="lg:hidden flex items-center space-x-4">
             <GameButton />
             <ThemeToggle />
             <button

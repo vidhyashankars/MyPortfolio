@@ -39,7 +39,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Passionate about delivering excellence through comprehensive testing strategies
           </p>
         </motion.div>
@@ -52,14 +52,14 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               As a dedicated Quality Assurance professional with over a decade of experience, 
               My expertise spans from manual testing to automated solutions, and quality process optimization.
               I specialize in creating robust testing frameworks and ensuring software reliability 
               across diverse industries.
             </p>
             
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               I'm passionate about implementing cutting-edge testing methodologies, mentoring 
               teams, and driving continuous improvement in software quality. My approach combines 
               technical expertise with strategic thinking to deliver exceptional results.

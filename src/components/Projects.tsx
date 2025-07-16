@@ -74,7 +74,7 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Featured <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Showcasing comprehensive QA expertise across diverse industries and platforms
           </p>
         </motion.div>
@@ -119,8 +119,8 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+              <div className="p-4 sm:p-6">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 

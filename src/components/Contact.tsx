@@ -13,7 +13,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect!</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect!</h2>
         </motion.div>
 
         <div className="flex justify-center">
@@ -33,11 +33,11 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MessageCircle className="w-10 h-10 text-white" />
               </div>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                 Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
                 Ready to bring that Aussie spirit to your next quality challenge!
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
                 Looking for NEW QA OPPORTUNITIES, testing strategy consultation, or want to discuss 
                 quality assurance best practices? Let's have a yarn!
               </p>
@@ -60,7 +60,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <LinkedIn size={20} />
                 Connect on LinkedIn
@@ -72,7 +72,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Github size={20} />
                 View GitHub

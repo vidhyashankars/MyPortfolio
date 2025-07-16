@@ -47,7 +47,7 @@ const Blogs = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             QA <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Insights</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Sharing knowledge, experiences, and insights from the world of Quality Assurance
           </p>
         </motion.div>
@@ -63,7 +63,7 @@ const Blogs = () => {
           <motion.div
             animate={{ 
               scale: [1, 1.1, 1],
-              rotate: [0, 5, -5, 0]
+            className="bg-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full backdrop-blur-sm"
             }}
             transition={{ 
               duration: 2,
@@ -127,7 +127,7 @@ const Blogs = () => {
                   </div>
                   
                   <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{topic.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">{topic.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{topic.description}</p>
                   
                   <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
                     <Clock size={16} />
@@ -135,7 +135,7 @@ const Blogs = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            <span className="text-sm sm:text-base font-semibold">Expected Launch: Q3 2025</span>
           </div>
         </div>
 

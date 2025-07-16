@@ -18,14 +18,14 @@ const Footer = () => {
           className="text-center"
         >
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
                 Thanks for Taking a Look!
               </span>
               <span className="ml-2">🙏</span>
             </h3>
             <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-gray-300 dark:text-gray-300 font-medium text-lg">
+              <p className="text-base sm:text-lg text-gray-300 dark:text-gray-300 font-medium">
                 Always learning, always testing, always growing.
               </p>
             </div>
