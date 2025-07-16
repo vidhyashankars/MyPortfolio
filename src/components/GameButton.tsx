@@ -394,55 +394,51 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div
+      className="fixed inset-0 z-[99999]"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        zIndex: 99999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.95)',
-        backdropFilter: 'blur(4px)',
-        padding: '16px'
+        zIndex: 99999
       }}
-      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '16px',
-          padding: '24px',
-          maxWidth: '512px',
-          width: '100%',
-          maxHeight: '80vh',
-          overflowY: 'auto',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          position: 'relative',
-          zIndex: 100000
-        }}
-        className="bg-white dark:bg-gray-800"
-        onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-white dark:bg-gray-900 overflow-y-auto"
       >
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white flex-1">🐛 Bug Hunt</h3>
-          <motion.button 
-            onClick={onClose} 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-800 dark:hover:text-white transition-all duration-200 flex-shrink-0"
-            aria-label="Close Bug Hunt"
-          >
-            <X size={20} />
-          </motion.button>
+        {/* Header */}
+        <div className="sticky top-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
+          <div className="max-w-4xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <motion.button
+                  onClick={onClose}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <X size={20} className="text-gray-600 dark:text-gray-300" />
+                </motion.button>
+                <div>
+                  <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">🐛 Bug Hunt</h1>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">Find all the bugs as fast as you can</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="text-center mb-4">
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white flex-1">Bug Hunt Game</h3>
+        </div>
+
+        <div className="text-center mb-4 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-600 dark:text-gray-300">
               Bugs Found: {foundBugs.size}/{bugs.length}
@@ -453,20 +449,20 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
           </div>
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
             <div 
-              className="bg-primary-600 h-2 rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 h-2 rounded-full transition-all duration-300"
               style={{ width: `${(foundBugs.size / bugs.length) * 100}%` }}
             />
           </div>
         </div>
 
         {!gameStarted && !gameComplete && (
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               Find all {bugs.length} bugs by clicking on them! You have 30 seconds.
             </p>
             <button
               onClick={() => setGameStarted(true)}
-              className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
+              className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Start Hunt!
             </button>
@@ -474,11 +470,11 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
         )}
 
         {gameComplete && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center mb-4"
-          >
+          <div className="text-center mb-4 bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
             <motion.div 
               className="text-6xl mb-4"
             >
@@ -493,22 +489,23 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             <div className="flex gap-3">
               <button
                 onClick={resetGame}
-               className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
+               className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Hunt Again
               </button>
               <button
                 onClick={onClose}
-               className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+               className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               >
                 Close
               </button>
             </div>
-          </motion.div>
+            </motion.div>
+          </div>
         )}
 
         {/* Bug Hunt Area */}
-        <div className="relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg h-[500px] overflow-hidden">
+        <div className="relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl h-[500px] overflow-hidden shadow-md">
           {bugs.map((bug) => (
             <motion.button
               key={bug.id}
@@ -532,6 +529,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
               </p>
             </div>
           )}
+        </div>
         </div>
       </motion.div>
     </div>
