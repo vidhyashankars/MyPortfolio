@@ -52,59 +52,70 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <motion.a
-                href="https://www.linkedin.com/in/vidhyashankarn"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
-                aria-label="LinkedIn Profile"
-              >
-                <LinkedIn size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
-                
-                {/* Background glow effect */}
-                <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                
-                {/* Ripple effect on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
-                  initial={{ scale: 0 }}
-                  whileHover={{ 
-                    scale: 1,
-                    opacity: [0, 0.3, 0],
-                    transition: { duration: 0.6 }
-                  }}
-                />
-              </motion.a>
-              
-              <motion.a
-                href="https://github.com/im-vidhyashankar"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
-                aria-label="GitHub Profile"
-              >
-                <Github size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
-                
-                {/* Background glow effect */}
-                <div className="absolute inset-0 bg-gray-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                
-                {/* Ripple effect on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
-                  initial={{ scale: 0 }}
-                  whileHover={{ 
-                    scale: 1,
-                    opacity: [0, 0.3, 0],
-                    transition: { duration: 0.6 }
-                  }}
-                />
-              </motion.a>
+              {/* Round Social Media Buttons */}
+              <div className="flex items-center gap-3">
+                <motion.a
+                  href="https://www.linkedin.com/in/vidhyashankarn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative p-3 sm:p-3 md:p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedIn size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+                  
+                  {/* Background glow effect */}
+                  <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                  
+                  {/* Ripple effect on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ 
+                      scale: 1,
+                      opacity: [0, 0.3, 0],
+                      transition: { duration: 0.6 }
+                    }}
+                  />
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/im-vidhyashankar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative p-3 sm:p-3 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
+                  aria-label="GitHub Profile"
+                >
+                  <Github size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+                  
+                  {/* Background glow effect */}
+                  <div className="absolute inset-0 bg-gray-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                  
+                  {/* Ripple effect on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ 
+                      scale: 1,
+                      opacity: [0, 0.3, 0],
+                      transition: { duration: 0.6 }
+                    }}
+                  />
+                </motion.a>
+              </div>
             </motion.div>
           </motion.div>
         </div>
