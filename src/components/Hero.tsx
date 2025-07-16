@@ -55,7 +55,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">🇦🇺</div>
+                <div className="text-2xl mb-2">📍</div>
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">Sydney Based</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
               </motion.div>
