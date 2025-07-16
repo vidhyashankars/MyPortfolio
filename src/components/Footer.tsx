@@ -22,10 +22,6 @@ const Footer = () => {
               Thanks for Taking a Look! 🙏
             </h3>
             <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-gray-300 dark:text-gray-400 text-lg leading-relaxed">
-                Whether you're a recruiter scouting for quality talent or just someone curious about what I do, 
-                I genuinely appreciate you taking the time to explore my work. Your interest means the world to me!
-              </p>
               <p className="text-primary-300 dark:text-primary-400 font-medium text-lg">
                 Always learning, always testing, always growing.
               </p>
