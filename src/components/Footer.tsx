@@ -22,10 +22,10 @@ const Footer = () => {
               Thanks for Taking a Look! 🙏
             </h3>
             <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-primary-300 dark:text-primary-400 font-medium text-lg">
+              <p className="text-gray-300 dark:text-gray-300 font-medium text-lg">
                 Always learning, always testing, always growing.
               </p>
-              <p className="text-primary-400 dark:text-primary-300 font-medium text-base mt-3">
+              <p className="text-gray-400 dark:text-gray-400 font-medium text-base mt-3">
                 P.S. Don't forget to try the fun games via the floating button! 🎮 
                 Test your QA knowledge and explore my skills in an interactive way! 😊
               </p>
