@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin as LinkedIn, Clock, Github } from 'lucide-react';
+import { MessageCircle, Clock, Github, Linkedin as LinkedIn } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -31,7 +31,7 @@ const Contact = () => {
               className="mb-8"
             >
               <div className="w-20 h-20 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <LinkedIn className="w-10 h-10 text-white" />
+                <MessageCircle className="w-10 h-10 text-white" />
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                 Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
