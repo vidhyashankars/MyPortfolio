@@ -110,33 +110,21 @@ const GameButton = () => {
         </AnimatePresence>
       </div>
 
-      {/* Game Modals */}
-      <AnimatePresence>
-        {showQuickGame && (
-          createPortal(
-            <QuickQuizModal onClose={() => setShowQuickGame(false)} />,
-            document.body
-          )
-        )}
-      </AnimatePresence>
+      {/* Game Modals - Using createPortal to render at document.body */}
+      {showQuickGame && createPortal(
+        <QuickQuizModal onClose={() => setShowQuickGame(false)} />,
+        document.body
+      )}
 
-      <AnimatePresence>
-        {showSkillsExplorer && (
-          createPortal(
-            <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />,
-            document.body
-          )
-        )}
-      </AnimatePresence>
+      {showSkillsExplorer && createPortal(
+        <SkillsExplorerPage onClose={() => setShowSkillsExplorer(false)} />,
+        document.body
+      )}
 
-      <AnimatePresence>
-        {showBugHunt && (
-          createPortal(
-            <BugHuntModal onClose={() => setShowBugHunt(false)} />,
-            document.body
-          )
-        )}
-      </AnimatePresence>
+      {showBugHunt && createPortal(
+        <BugHuntModal onClose={() => setShowBugHunt(false)} />,
+        document.body
+      )}
     </>
   );
 };
@@ -185,33 +173,44 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[99999]"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        zIndex: 99999
+        zIndex: 99999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        backdropFilter: 'blur(4px)',
+        padding: '16px'
       }}
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
-        onClick={(e) => e.target === e.currentTarget && onClose()}
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.5, opacity: 0 }}
+        style={{
+          backgroundColor: 'white',
+          borderRadius: '16px',
+          padding: '24px',
+          maxWidth: '448px',
+          width: '100%',
+          maxHeight: '80vh',
+          overflowY: 'auto',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          position: 'relative',
+          zIndex: 100000
+        }}
+        className="dark:bg-gray-800"
+        onClick={(e) => e.stopPropagation()}
       >
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.5, opacity: 0 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full max-h-[80vh] overflow-y-auto shadow-2xl relative"
-          onClick={(e) => e.stopPropagation()}
-        >
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">🧠 Quick QA Quiz</h3>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <button onClick={onClose} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
             <X size={20} />
           </button>
         </div>
@@ -242,7 +241,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
                   onClick={() => handleAnswer(index)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full text-left p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors duration-200"
+                  className="w-full text-left p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors duration-200 text-gray-900 dark:text-white"
                 >
                   {option}
                 </motion.button>
@@ -291,7 +290,6 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
             </div>
           </div>
         )}
-        </motion.div>
       </motion.div>
     </div>
   );
@@ -392,30 +390,41 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[99999]"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        zIndex: 99999
+        zIndex: 99999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        backdropFilter: 'blur(4px)',
+        padding: '16px'
       }}
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
-        onClick={(e) => e.target === e.currentTarget && onClose()}
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.5, opacity: 0 }}
+        style={{
+          backgroundColor: 'white',
+          borderRadius: '16px',
+          padding: '24px',
+          maxWidth: '512px',
+          width: '100%',
+          maxHeight: '80vh',
+          overflowY: 'auto',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          position: 'relative',
+          zIndex: 100000
+        }}
+        className="dark:bg-gray-800"
+        onClick={(e) => e.stopPropagation()}
       >
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.5, opacity: 0 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl relative"
-          onClick={(e) => e.stopPropagation()}
-        >
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white flex-1">🐛 Bug Hunt</h3>
           <motion.button 
@@ -520,7 +529,6 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             </div>
           )}
         </div>
-        </motion.div>
       </motion.div>
     </div>
   );
