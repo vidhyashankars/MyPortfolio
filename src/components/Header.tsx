@@ -75,8 +75,10 @@ const Header = () => {
               </motion.a>
             ))}
             </nav>
-            <GameButton />
-            <ThemeToggle />
+            <div className="flex items-center space-x-3">
+              <GameButton />
+              <ThemeToggle />
+            </div>
           </div>
 
           <div className="lg:hidden flex items-center space-x-3">
