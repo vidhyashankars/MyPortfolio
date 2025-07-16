@@ -79,44 +79,9 @@ const Contact = () => {
               </motion.a>
             </motion.div>
           </motion.div>
-
-          {/* Bug Report Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700"
-          >
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                Found an Issue? 🐛
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
-                Help me improve this website! If you spot any bugs, usability issues, or have suggestions, 
-                I'd love to hear from you. As a QA professional, I appreciate thorough feedback!
-              </p>
-              <motion.button
-                onClick={() => {
-                  const subject = encodeURIComponent('Bug Report - Portfolio Website');
-                  const body = encodeURIComponent(`Hi Vid,\n\nI found an issue on your portfolio website:\n\nDevice: ${navigator.userAgent}\nBrowser: ${navigator.appName}\nScreen Size: ${window.innerWidth}x${window.innerHeight}\n\nIssue Description:\n[Please describe the bug you found]\n\nSteps to Reproduce:\n1. \n2. \n3. \n\nExpected Result:\n[What should happen]\n\nActual Result:\n[What actually happened]\n\nAdditional Notes:\n[Any other relevant information]\n\nThanks for helping improve the site!`);
-                  window.open(`https://www.linkedin.com/messaging/compose/?recipient=vidhyashankarn&subject=${subject}&body=${body}`, '_blank');
-                }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <span className="text-xl">🐛</span>
-                Report a Bug
-              </motion.button>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
-                Your feedback helps me deliver better quality experiences!
-              </p>
-            </div>
-          </motion.div>
         </div>
 
-        {/* Bug Report Section */}
+        {/* Bug Report Section - Now positioned after the main contact popup */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
