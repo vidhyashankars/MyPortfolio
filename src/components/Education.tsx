@@ -126,16 +126,14 @@ const Education = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                    <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 dark:text-white">{cert.name}</h4>
-              >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">{cert.name}</h4>
                   <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-2 py-1 rounded-md text-xs font-medium">
-                  <h5 className="text-sm sm:text-base text-primary-600 dark:text-primary-400 font-semibold mb-2">{cert.issuer}</h5>
-                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">{cert.description}</p>
+                    {cert.year}
+                  </span>
                 </div>
-                <h5 className="text-primary-600 dark:text-primary-400 font-semibold mb-2">{cert.issuer}</h5>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{cert.description}</p>
+                <h5 className="text-sm sm:text-base text-primary-600 dark:text-primary-400 font-semibold mb-2">{cert.issuer}</h5>
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">{cert.description}</p>
               </motion.div>
             ))}
           </div>
