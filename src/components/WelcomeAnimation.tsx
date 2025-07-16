@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 
 const WelcomeAnimation = () => {
   const [showWelcome, setShowWelcome] = useState(false);
-  const [countdown, setCountdown] = useState(8);
+  const [countdown, setCountdown] = useState(15);
 
   useEffect(() => {
     // Check if welcome was shown today
@@ -38,7 +38,7 @@ const WelcomeAnimation = () => {
       
       const autoDismissTimer = setTimeout(() => {
         setShowWelcome(false);
-      }, 8000);
+      }, 15000);
       
       return () => {
         clearTimeout(autoDismissTimer);
@@ -49,7 +49,7 @@ const WelcomeAnimation = () => {
 
   const handleClose = () => {
     setShowWelcome(false);
-    setCountdown(8); // Reset countdown
+    setCountdown(15); // Reset countdown
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -117,7 +117,7 @@ const WelcomeAnimation = () => {
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                     initial={{ strokeDasharray: "100, 100" }}
                     animate={{ 
-                      strokeDasharray: `${(countdown / 8) * 100}, 100`,
+                      strokeDasharray: `${(countdown / 15) * 100}, 100`,
                     }}
                     transition={{ duration: 0.5, ease: "linear" }}
                   />
