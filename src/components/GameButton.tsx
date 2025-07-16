@@ -49,10 +49,9 @@ const GameButton = () => {
           whileTap={{ scale: 0.95 }}
           className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 transition-colors duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center"
           aria-label="Games menu"
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white">🐛 Bug Hunt</h3>
-        <button onClick={onClose} className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-          <X size={20} />
-        </button>
+        >
+          <Gamepad2 size={20} />
+        </motion.button>
 
         {/* Dropdown Menu */}
         <AnimatePresence>
