@@ -112,8 +112,6 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
-                    <h4 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{exp.company}</h4>
                   </div>
                 </motion.div>
 

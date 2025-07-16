@@ -63,13 +63,13 @@ const Blogs = () => {
           <motion.div
             animate={{ 
               scale: [1, 1.1, 1],
-            className="bg-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full backdrop-blur-sm"
             }}
             transition={{ 
               duration: 2,
               repeat: Infinity,
               repeatType: "reverse"
             }}
+            className="bg-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full backdrop-blur-sm"
             className="text-6xl mb-4"
           >
             🚀
@@ -135,9 +135,6 @@ const Blogs = () => {
                   </div>
                 </div>
               </motion.div>
-            <span className="text-sm sm:text-base font-semibold">Expected Launch: Q3 2025</span>
-          </div>
-        </div>
 
         {/* Newsletter Signup Teaser */}
         <motion.div
