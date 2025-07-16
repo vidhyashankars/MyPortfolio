@@ -133,7 +133,7 @@ const SkillsExplorerPage: React.FC<SkillsExplorerPageProps> = ({ onClose }) => {
       className="fixed inset-0 bg-white dark:bg-gray-900 z-[200] overflow-y-auto"
     >
       {/* Header */}
-      <div className="sticky top-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 z-10">
+      <div className="sticky top-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -146,8 +146,8 @@ const SkillsExplorerPage: React.FC<SkillsExplorerPageProps> = ({ onClose }) => {
                 <ArrowLeft size={20} className="text-gray-600 dark:text-gray-300" />
               </motion.button>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">🎯 Skills Explorer</h1>
-                <p className="text-gray-600 dark:text-gray-300">Discover interesting facts about my technical skills</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">🎯 Skills Explorer</h1>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">Discover interesting facts about my technical skills</p>
               </div>
             </div>
             
