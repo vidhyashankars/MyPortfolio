@@ -242,7 +242,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
                   onClick={() => handleAnswer(index)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full text-left p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors duration-200 text-gray-900 dark:text-white"
+                  className="w-full text-left p-3 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200 text-gray-900 dark:text-white"
                 >
                   {option}
                 </motion.button>
@@ -278,13 +278,13 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
             <div className="flex gap-3">
               <button
                 onClick={resetQuiz}
-                className="flex-1 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+                className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Try Again
               </button>
               <button
                 onClick={onClose}
-                className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               >
                 Close
               </button>
@@ -432,7 +432,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             onClick={onClose} 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-800 dark:hover:text-white transition-all duration-200 flex-shrink-0 z-10"
+            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-800 dark:hover:text-white transition-all duration-200 flex-shrink-0"
             aria-label="Close Bug Hunt"
           >
             <X size={20} />
@@ -463,7 +463,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             </p>
             <button
               onClick={() => setGameStarted(true)}
-              className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+              className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
             >
               Start Hunt!
             </button>
@@ -490,13 +490,13 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
             <div className="flex gap-3">
               <button
                 onClick={resetGame}
-                className="flex-1 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+               className="flex-1 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Hunt Again
               </button>
               <button
                 onClick={onClose}
-                className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+               className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               >
                 Close
               </button>
