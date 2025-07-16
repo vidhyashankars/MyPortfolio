@@ -126,6 +126,8 @@ const Education = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -2 }}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+              >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">{cert.name}</h4>
                   <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 px-2 py-1 rounded-md text-xs font-medium">
