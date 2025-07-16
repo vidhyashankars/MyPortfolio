@@ -214,7 +214,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2.5 }}
-            className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-20 sm:bottom-24 md:bottom-28 left-1/2 transform -translate-x-1/2"
           >
             <motion.button
               onClick={() => {
@@ -229,11 +229,11 @@ const Hero = () => {
                 boxShadow: "0 8px 25px rgba(34, 197, 94, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-green-400/30 hover:border-green-300/50"
+              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full p-2.5 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-green-400/30 hover:border-green-300/50"
               aria-label="Explore below"
             >
               {/* Background glow effect */}
-              <div className="absolute inset-0 bg-green-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 bg-green-400/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
               
               {/* Arrow icon */}
               <motion.div
@@ -242,8 +242,8 @@ const Hero = () => {
                 className="relative z-10 flex items-center justify-center"
               >
                 <ArrowDown 
-                  size={24} 
-                  className="sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform duration-200" 
+                  size={18} 
+                  className="sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" 
                 />
               </motion.div>
               
@@ -264,15 +264,15 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 3 }}
-              className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 text-center mt-3 font-medium"
+              className="text-xs text-gray-600 dark:text-gray-300 text-center mt-2 font-medium"
             >
               Explore below
             </motion.p>
           </motion.div>
         </div>
         
-        {/* Minimal spacing to ensure arrow doesn't overlap */}
-        <div className="h-6 sm:h-8 md:h-10"></div>
+        {/* Spacing to ensure no overlap with marquee */}
+        <div className="h-32 sm:h-36 md:h-40"></div>
       </div>
     </section>
   );
