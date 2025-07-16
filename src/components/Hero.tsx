@@ -45,19 +45,19 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-8 sm:mb-10 max-w-4xl mx-auto px-2 sm:px-4"
+            className="mb-6 sm:mb-8 max-w-4xl mx-auto px-2 sm:px-4"
           >
-            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">📍</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Sydney Based</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
+                <div className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2">📍</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-xs sm:text-sm md:text-base">Sydney Based</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-tight">Australian QA professional</p>
               </motion.div>
               
               <motion.div
@@ -65,11 +65,11 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">⚡</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quick Response</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">I'll reach out within 3 hours max!</p>
+                <div className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2">⚡</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-xs sm:text-sm md:text-base">Quick Response</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-tight">I'll reach out within 3 hours max!</p>
               </motion.div>
               
               <motion.div
@@ -77,11 +77,11 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-lg border border-gray-200/50 dark:border-gray-600/50"
               >
-                <div className="text-2xl mb-2">🎯</div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quality Focus</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Passionate about delivering excellence</p>
+                <div className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2">🎯</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-xs sm:text-sm md:text-base">Quality Focus</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-tight">Passionate about delivering excellence</p>
               </motion.div>
             </div>
           </motion.div>
