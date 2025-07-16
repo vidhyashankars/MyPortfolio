@@ -147,20 +147,17 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.6 }}
             className="mt-8 text-center"
           >
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-2xl mx-auto">
-              <motion.p 
-                className="text-gray-700 dark:text-gray-300 text-sm font-medium"
-                animate={{ 
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              >
-                P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
-              </motion.p>
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-3 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden">
+              <div className="marquee-container">
+                <div className="marquee-content">
+                  <span className="text-gray-700 dark:text-gray-300 text-sm font-medium whitespace-nowrap px-8">
+                    P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
+                  </span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm font-medium whitespace-nowrap px-8">
+                    P.S. Don't forget to try the fun games via the floating button! 🎮 Test your QA knowledge and explore my skills in an interactive way! 😊
+                  </span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
