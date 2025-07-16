@@ -70,14 +70,14 @@ const Contact = () => {
                 href="https://github.com/im-vidhyashankar"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
                 <Github size={20} />
                 View GitHub
               </motion.a>
             </motion.div>
+            <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-6">
+              <Clock size={20} />
+              <span className="font-semibold">I'll reach out within 3 hours max!</span>
+            </div>
           </motion.div>
         </div>
       </div>
