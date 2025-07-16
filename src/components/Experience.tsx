@@ -11,7 +11,7 @@ const Experience = () => {
       period:  'Oct 2024 - Present',
     },
     {
-      title: 'Test lead / Senior Test Analyst',
+      title: 'Test Lead / Senior Test Analyst',
       company: 'Sherpa',
       location: 'Sydney, Australia',
       period:  'Dec 2019 - Jul 2024',
