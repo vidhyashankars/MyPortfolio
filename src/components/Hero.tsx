@@ -117,10 +117,10 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 1.4 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 sm:p-2.5 md:p-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin size={16} className="sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform duration-200" />
+                <Linkedin size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
               </motion.a>
 
               <motion.a
@@ -132,10 +132,10 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 1.5 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 sm:p-2.5 md:p-3 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
                 aria-label="GitHub Profile"
               >
-                <Github size={16} className="sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform duration-200" />
+                <Github size={20} className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
               </motion.a>
             </div>
           </motion.div>
