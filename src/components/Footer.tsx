@@ -25,10 +25,6 @@ const Footer = () => {
               <p className="text-primary-300 dark:text-primary-400 font-medium text-lg">
                 Always learning, always testing, always growing.
               </p>
-              <p className="text-gray-400 dark:text-gray-500 text-base">
-                Ready to bring that same dedication and Aussie spirit to your next quality challenge. 
-                Let's have a yarn about how we can make something brilliant together!
-              </p>
               <p className="text-primary-400 dark:text-primary-300 font-medium text-base mt-3">
                 P.S. Don't forget to try the fun games via the floating button! 🎮 
                 Test your QA knowledge and explore my skills in an interactive way! 😊
