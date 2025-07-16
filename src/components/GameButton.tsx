@@ -206,7 +206,7 @@ const QuickQuizModal = ({ onClose }: { onClose: () => void }) => {
           position: 'relative',
           zIndex: 100000
         }}
-        className="dark:bg-gray-800"
+        className="bg-white dark:bg-gray-800"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
@@ -423,7 +423,7 @@ const BugHuntModal = ({ onClose }: { onClose: () => void }) => {
           position: 'relative',
           zIndex: 100000
         }}
-        className="dark:bg-gray-800"
+        className="bg-white dark:bg-gray-800"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
