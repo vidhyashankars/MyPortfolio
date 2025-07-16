@@ -219,9 +219,9 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="text-gray-400 dark:text-gray-500"
+              <div className="text-2xl mb-2">🏢</div>
             >
-              <ArrowDown size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
             </motion.div>
           </motion.div>
         </div>
