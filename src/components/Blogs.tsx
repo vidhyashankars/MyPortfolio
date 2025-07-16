@@ -167,37 +167,6 @@ const Blogs = () => {
           </motion.a>
         </motion.div>
       </div>
-
-      {/* Explore Below Button */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.button
-          onClick={() => {
-            const contactSection = document.getElementById('contact');
-            contactSection?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex flex-col items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-4 py-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 dark:border-gray-600/50 group cursor-pointer"
-        >
-          <motion.div
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="text-xl group-hover:text-2xl transition-all duration-300"
-          >
-            ⬇️
-          </motion.div>
-          <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
-            Contact
-          </span>
-        </motion.button>
-      </motion.div>
     </section>
   );
 };
