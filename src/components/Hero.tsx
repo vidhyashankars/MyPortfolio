@@ -83,7 +83,6 @@ const Hero = () => {
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">Quick Response</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">I'll reach out within 3 hours max!</p>
               </motion.div>
-              </div>
             </div>
           </motion.div>
 
@@ -126,6 +125,8 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Skills Tags */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -174,6 +175,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -265,7 +267,7 @@ const Hero = () => {
         
         {/* Minimal spacing to ensure arrow doesn't overlap */}
         <div className="h-6 sm:h-8 md:h-10"></div>
-        </div>
+      </div>
     </section>
   );
 };
