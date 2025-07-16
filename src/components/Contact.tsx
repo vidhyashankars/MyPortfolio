@@ -14,10 +14,6 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect!</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
-            Ready to bring that Aussie spirit to your next quality challenge!
-          </p>
         </motion.div>
 
         <div className="flex justify-center">
@@ -37,12 +33,15 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <LinkedIn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect!</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
+                Ready to bring that Aussie spirit to your next quality challenge!
+              </p>
               <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-4">
                 <Clock size={20} />
                 <span className="font-semibold">I'll reach out within 3 hours max!</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
                 Looking for QA leadership, testing strategy consultation, or want to discuss 
                 quality assurance best practices? Let's have a yarn!
               </p>
