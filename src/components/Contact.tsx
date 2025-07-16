@@ -34,7 +34,6 @@ const Contact = () => {
                 <LinkedIn className="w-10 h-10 text-white" />
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
                 Ready to bring that Aussie spirit to your next quality challenge!
               </p>
               <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-4">
