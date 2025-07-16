@@ -219,8 +219,9 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              <div className="text-2xl mb-2">🏢</div>
+              className="text-center"
             >
+              <div className="text-2xl mb-2">🏢</div>
               <p className="text-sm text-gray-600 dark:text-gray-300">Australian QA professional</p>
             </motion.div>
           </motion.div>
