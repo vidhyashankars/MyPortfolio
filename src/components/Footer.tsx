@@ -54,7 +54,7 @@ const Footer = () => {
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 mr-20"
               >
                 <ArrowUp size={20} />
               </motion.button>
