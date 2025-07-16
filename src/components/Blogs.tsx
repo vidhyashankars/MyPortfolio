@@ -85,7 +85,6 @@ const Blogs = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="bg-white/20 px-6 py-3 rounded-full backdrop-blur-sm"
             >
-              <span className="font-semibold">Expected Launch: Q1 2025</span>
               <span className="font-semibold">Expected Launch: Q3 2025</span>
             </motion.div>
           </div>
