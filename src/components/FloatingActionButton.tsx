@@ -30,6 +30,54 @@ const FloatingActionButton = () => {
     }
   ];
 
+  return (
+    <>
+      <div className="relative">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 10 }}
+              className="absolute top-12 right-0 space-y-2 z-50 min-w-[200px]"
+            >
+              {games.map((game, index) => (
+                <motion.button
+                  key={game.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={game.action}
+                  className="flex items-center gap-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group w-full"
+                >
+                  <game.icon size={18} className="text-primary-600 dark:text-primary-400" />
+                  <div className="text-left">
+                    <div className="font-semibold text-sm">{game.title}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">{game.description}</div>
+                  </div>
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 transition-colors duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center"
+          aria-label="Games menu"
+        >
+          <motion.div
+            animate={{ rotate: isOpen ? 45 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300"
+          >
+            {isOpen ? <X size={16} className="sm:w-5 sm:h-5" /> : <Gamepad2 size={16} className="sm:w-5 sm:h-5" />}
+          </motion.div>
+        </motion.button>
+      </div>
 
       {/* Quick Quiz Modal */}
       <AnimatePresence>
