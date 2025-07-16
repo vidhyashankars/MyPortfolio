@@ -86,51 +86,12 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Value Proposition */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mb-8 sm:mb-10 max-w-4xl mx-auto px-2 sm:px-4"
-          >
-            <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 text-center">
-                🎯 What I Bring to Your Team
-              </h3>
-              <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    <strong>13+ Major Projects</strong> delivered across e-commerce, fintech, and enterprise
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    <strong>Team Leadership</strong> experience with mentoring and process optimization
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    <strong>Modern Tech Stack</strong> - Playwright, Selenium, CI/CD, Cloud Testing
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    <strong>Agile Expert</strong> with ISTQB & PSM1 certifications
-                  </span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Skills Tags */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
             className="mb-8 sm:mb-10 max-w-5xl mx-auto px-1 sm:px-2"
           >
             <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
@@ -149,7 +110,7 @@ const Hero = () => {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ 
                     duration: 0.6, 
-                    delay: 1.1 + index * 0.1,
+                    delay: 1.0 + index * 0.1,
                     type: "spring",
                     stiffness: 100
                   }}
@@ -179,7 +140,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
+            transition={{ duration: 0.8, delay: 1.7 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2 sm:px-4 mb-8 sm:mb-10"
           >
             <motion.button
@@ -202,7 +163,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 2.0 }}
+                transition={{ duration: 0.6, delay: 1.9 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
@@ -217,7 +178,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 2.1 }}
+                transition={{ duration: 0.6, delay: 2.0 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-3 sm:p-3 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px]"
@@ -232,7 +193,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.4 }}
+            transition={{ duration: 0.8, delay: 2.3 }}
             className="flex justify-center px-2 sm:px-4 mb-16 sm:mb-20 md:mb-12"
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl overflow-hidden">
@@ -252,7 +213,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2.6 }}
+            transition={{ duration: 1, delay: 2.5 }}
             className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2"
           >
             <motion.div
