@@ -37,14 +37,14 @@ const Contact = () => {
                 Whether you're a recruiter or just curious about my work, I appreciate you exploring my portfolio. 
                 Ready to bring that Aussie spirit to your next quality challenge!
               </p>
-              <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-4">
-                <Clock size={20} />
-                <span className="font-semibold">I'll reach out within 3 hours max!</span>
-              </div>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
                 Looking for QA leadership, testing strategy consultation, or want to discuss 
                 quality assurance best practices? Let's have a yarn!
               </p>
+              <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-6">
+                <Clock size={20} />
+                <span className="font-semibold">I'll reach out within 3 hours max!</span>
+              </div>
             </motion.div>
 
             <motion.div
