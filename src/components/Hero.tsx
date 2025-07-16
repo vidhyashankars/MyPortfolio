@@ -145,9 +145,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
-            className="text-center px-2 sm:px-4 mb-8 sm:mb-12"
+            className="flex justify-center px-2 sm:px-4 mb-8 sm:mb-12"
           >
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto overflow-hidden mr-16 sm:mr-0">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full py-1 sm:py-1.5 md:py-2 shadow-lg border border-gray-200/50 dark:border-gray-600/50 max-w-4xl overflow-hidden">
               <div className="marquee-container">
                 <div className="marquee-content">
                   <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap px-2 sm:px-3 md:px-6">
