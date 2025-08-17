@@ -1,8 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Calendar, Clock, Star, Zap } from 'lucide-react';
+import { BookOpen, Calendar, Clock, Star, Zap, Brain } from 'lucide-react';
 
 const Blogs = () => {
+  const blogPosts = [
+    {
+      id: 1,
+      title: '🧠 Curious Conversations with AI: How Is ChatGPT Tested?',
+      excerpt: 'Today I asked ChatGPT how it\'s tested before going live. You\'d think an AI would be tested by other AIs, right? Well... yes and no.',
+      content: `Today I asked ChatGPT how it's tested before going live. You'd think an AI would be tested by other AIs, right? Well... yes and no.
+
+It turns out the development behind the scenes is far more intricate than I imagined. Large AI applications like ChatGPT go through a hybrid approach: automated testing powered by AI tools, combined with manual reviews by human testers who focus on edge cases, ethics, and real-world user experience.
+
+The automated tools simulate millions of interactions across different use cases, checking for bugs, security issues, and language comprehension. It's like a digital stress test to ensure the model doesn't just work—it works well.
+
+But even the smartest AI needs a human lens. That's where researchers and testers come in, challenging ChatGPT with ambiguous prompts, sensitive topics, and context-rich scenarios. Their insights help fine-tune responses that feel natural and safe.
+
+What fascinated me most was the ongoing feedback loop—user interactions (like the one I had!) inform continual improvements. It's not a one-time QA process; it's a living evolution.
+
+👉 Curious minds drive innovation. If you're into product development, AI ethics, or testing methodologies, exploring how models like ChatGPT are polished behind the scenes is incredibly inspiring.
+
+Let's keep asking smarter questions. That's how smarter tools get built.`,
+      date: 'December 2024',
+      category: 'AI & Testing',
+      tags: ['AI Testing', 'ChatGPT', 'QA Methodology', 'Innovation'],
+      icon: Brain,
+      gradient: 'from-purple-500 to-pink-500'
+    }
+  ];
+
   const upcomingTopics = [
     {
       icon: Zap,
@@ -52,6 +78,85 @@ const Blogs = () => {
           </p>
         </motion.div>
 
+        {/* Published Blog Posts */}
+        {blogPosts.length > 0 && (
+          <div className="mb-12">
+            <motion.h3
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center"
+            >
+              Latest Posts
+            </motion.h3>
+
+            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 mb-8">
+              {blogPosts.map((post, index) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.01, y: -2 }}
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+                >
+                  {/* Post Header */}
+                  <div className={`bg-gradient-to-r ${post.gradient} p-6 text-white relative overflow-hidden`}>
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-10 translate-x-10"></div>
+                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+                          <post.icon className="w-6 h-6" />
+                        </div>
+                        <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+                          {post.category}
+                        </span>
+                        <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+                          {post.date}
+                        </span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold mb-2">{post.title}</h3>
+                      <p className="text-white/90 text-sm sm:text-base">{post.excerpt}</p>
+                    </div>
+                  </div>
+
+                  {/* Post Content */}
+                  <div className="p-6">
+                    <div className="prose prose-gray dark:prose-invert max-w-none">
+                      {post.content.split('\n\n').map((paragraph, pIndex) => (
+                        <p key={pIndex} className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      {post.tags.map((tag, tagIndex) => (
+                        <motion.span
+                          key={tagIndex}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: tagIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                          className="bg-gradient-to-r from-primary-500/10 to-primary-600/10 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full text-xs font-medium border border-primary-200/50 dark:border-primary-400/30 hover:border-primary-300 dark:hover:border-primary-400 transition-all duration-300 cursor-default"
+                        >
+                          #{tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Coming Soon Banner */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -73,9 +178,9 @@ const Blogs = () => {
           >
             🚀
           </motion.div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Blog Section Coming Soon!</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4">More Content Coming Soon!</h3>
           <p className="text-sm sm:text-base md:text-xl text-primary-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
-            I'm working on some fantastic content to share my QA knowledge and experiences. 
+            I'm working on more fantastic content to share my QA knowledge and experiences. 
             Stay tuned for in-depth articles, tutorials, and insights!
           </p>
           <div className="flex justify-center">
