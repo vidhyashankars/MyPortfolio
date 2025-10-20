@@ -70,26 +70,7 @@ Let's keep asking smarter questions. That's how smarter tools get built.`,
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            QA <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Insights</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Sharing knowledge, experiences, and insights from the world of Quality Assurance
-          </p>
         </motion.div>
-
-        {/* Published Blog Posts */}
-        {blogPosts.length > 0 && (
-          <div className="mb-12">
-            <motion.h3
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center"
-            >
-              Latest Posts
-            </motion.h3>
 
             <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 mb-8">
               {blogPosts.map((post, index) => (
@@ -154,8 +135,6 @@ Let's keep asking smarter questions. That's how smarter tools get built.`,
                 </motion.article>
               ))}
             </div>
-          </div>
-        )}
 
         {/* Coming Soon Banner */}
         <motion.div
