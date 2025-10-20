@@ -55,7 +55,7 @@ const Projects = () => {
       //image: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=400',
       image: 'https://i.postimg.cc/jSMSwS4y/logo-walmart.jpg',
       description: 'Large-scale e-commerce platform testing focusing on scalability, performance under load, multi-channel integration, and ensuring seamless shopping experience for millions of users.',
-      technologies: ['Microservices Testing', 'Kubernetes Testing', 'API Automation', 'Performance Testing', 'CI/CD Integration', 'Docker'],
+      technologies: ['Manual Testing', 'API Testing', 'Selenium RC', 'CI/CD Integration', 'Core Java', 'BrowserStack' ],
       category: 'Enterprise E-commerce',
       gradient: 'from-blue-600 to-purple-600',
     },
