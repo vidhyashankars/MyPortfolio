@@ -91,7 +91,7 @@ const About = () => {
           >
             <div className="bg-gradient-to-br from-black to-primary-600 dark:from-primary-600 dark:to-primary-500 rounded-2xl p-8 text-white">
               <img
-                src="https://i.postimg.cc/2jTx91t4/1774349247033.jpg"
+                src="https://i.postimg.cc/zDPgRKMT/1774349247033.jpg"
                 alt="Vinu - QA Professional"
                 className="w-full h-64 object-cover rounded-xl mb-6"
               />
