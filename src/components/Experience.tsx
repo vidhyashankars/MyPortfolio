@@ -4,11 +4,17 @@ import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
-      {
-      title: 'Application Test Analyst / Test Lead',
+    {
+      title: 'Senior Quality Assurance Lead',
+      company: 'Future Secure AI',
+      location: 'Sydney, Australia',
+      period:  'Jan 2026 - Present',
+    },
+    {
+      title: 'Test Lead',
       company: 'NSW Police Force',
       location: 'Sydney, Australia',
-      period:  'Oct 2024 - Present',
+      period:  'Oct 2024 - Dec 2025',
     },
     {
       title: 'Test Lead / Senior Test Analyst',
