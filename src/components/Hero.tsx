@@ -35,9 +35,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
-            Hi, I'm <span className="font-semibold text-gray-900 dark:text-white">Vid</span> - A passionate QA professional with over 
-            <span className="font-semibold text-primary-600 dark:text-primary-400"> 10 years of experience</span> in ensuring software excellence 
-            and delivering quality products.
+            Hi, I'm <span className="font-semibold text-gray-900 dark:text-white">Vid</span> — a passionate Test Consultant with over
+            <span className="font-semibold text-primary-600 dark:text-primary-400"> 10 years of experience</span> in software testing, Quality Assurance, and Quality Engineering.
+            I focus on delivering quality software through effective testing, automation, and AI testing, helping build reliable software and intelligent systems.
           </motion.p>
 
           {/* Key Highlights for Recruiters */}
