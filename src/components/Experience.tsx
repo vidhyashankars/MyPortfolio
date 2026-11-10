@@ -4,8 +4,14 @@ import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
-      {
-      title: 'Application Test Analyst / Test Lead',
+    {
+      title: 'Senior QA Engineer',
+      company: 'NSW Police Force',
+      location: 'Sydney, Australia',
+      period:  'Oct 2024 - Present',
+    }, 
+    {
+      title: 'Test Lead',
       company: 'NSW Police Force',
       location: 'Sydney, Australia',
       period:  'Oct 2024 - Present',
