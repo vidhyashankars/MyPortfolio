@@ -31,7 +31,7 @@ const Experience = () => {
     {
       title: 'Senior Test Engineer',
       company: 'Verizon - USA',
-      location: 'Bengaluru, India',
+      location: 'Bengaluru, India / USA',
       period: 'Feb 2016 - Feb 2019',
     },
     {
