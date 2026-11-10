@@ -22,10 +22,10 @@ const Hero = () => {
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 sm:mb-10 md:mb-12 lg:mb-14"
             >
               <span className="bg-gradient-to-r from-black via-primary-600 to-primary-800 dark:from-primary-400 dark:via-primary-300 dark:to-primary-200 bg-clip-text text-transparent">
-                Quality Assurance
+                Quality Engineering &amp;
               </span>
               <br />
-              <span className="text-gray-900 dark:text-white">Professional</span>
+              <span className="text-gray-900 dark:text-white">Software Test Consultant</span>
             </motion.h1>
           </motion.div>
 
