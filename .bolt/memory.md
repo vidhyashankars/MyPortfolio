@@ -10,7 +10,7 @@
 ## Brand personality & voice
 
 - Professional, career-focused personal branding
-- Current hero headline: "Quality Engineering & Software Test Consultant"
+- Current hero headline: "Quality Engineering & Test Consultant"
 
 ## Visual design & UX direction
 
@@ -21,7 +21,7 @@
 
 ## Decisions, constraints & rationale
 
-- Replaced hero title from "Quality Assurance Professional" to "Quality Engineering & Software Test Consultant"
+- Hero title evolved: "Quality Assurance Professional" → "Quality Engineering & Software Test Consultant" → "Quality Engineering & Test Consultant" (removed "Software" per user request)
 - Main app file must be kept clean (no leftover unapplied diffs)
 - Verify project builds cleanly before delivery
 - `.bolt/prompt` holds global design/stack instructions — follow them; not restated here

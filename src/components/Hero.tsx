@@ -25,7 +25,7 @@ const Hero = () => {
                 Quality Engineering &amp;
               </span>
               <br />
-              <span className="text-gray-900 dark:text-white">Software Test Consultant</span>
+              <span className="text-gray-900 dark:text-white">Test Consultant</span>
             </motion.h1>
           </motion.div>
 
