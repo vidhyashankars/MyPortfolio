@@ -6,9 +6,9 @@ const Experience = () => {
   const experiences = [
     {
       title: 'Senior QA Engineer',
-      company: 'NSW Police Force',
+      company: 'Future Secure AI',
       location: 'Sydney, Australia',
-      period:  'Oct 2024 - Present',
+      period:  'Jan 2026 - Present',
     }, 
     {
       title: 'Test Lead',
