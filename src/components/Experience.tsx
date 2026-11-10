@@ -30,7 +30,7 @@ const Experience = () => {
     },
     {
       title: 'Senior Test Engineer',
-      company: 'Infinite Computer Solutions',
+      company: 'Verizon - USA',
       location: 'Bengaluru, India',
       period: 'Feb 2016 - Feb 2019',
     },
