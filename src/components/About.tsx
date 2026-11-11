@@ -53,17 +53,22 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              A passionate Quality Engineering professional with 10+ years of experience in Quality Assurance,
+              A results-driven Quality Engineering professional with 10+ years of experience in Quality Assurance,
               software testing, and automation, focused on driving software excellence
               and delivering reliable, high-quality products.
             </p>
             
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm passionate about implementing cutting-edge testing methodologies, mentoring 
-              teams, and driving continuous improvement in software quality. My approach combines 
-              technical expertise with strategic thinking to deliver exceptional results.
+              Experienced in designing testing strategies, building automation frameworks, improving test processes,
+              and delivering reliable software solutions.I focus on integrating quality into every stage of the development
+              lifecycle through effective testing practices and modern engineering approaches.
             </p>
-
+            
+            <p  className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            I believe in continuous improvement, collaboration, and using modern testing approaches,
+            including AI-driven testing, to make software quality smarter, faster, and more efficient.
+            </p>
+            
             <div className="flex flex-wrap gap-3 mt-6">
               {['Manual Testing', 'Automation Testing', 'API Testing', 
                 'Mobile Testing', 'DevOps Integration'].map((skill, index) => (
