@@ -60,12 +60,12 @@ const About = () => {
             
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Experienced in designing testing strategies, building automation frameworks, improving test processes,
-              and delivering reliable software solutions.I focus on integrating quality into every stage of the development
+              and delivering reliable software solutions. I focus on integrating quality into every stage of the development
               lifecycle through effective testing practices and modern engineering approaches.
             </p>
             
             <p  className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I believe in continuous improvement, collaboration, and using modern testing approaches,
+            I believe in continuous improvement, collaboration, and using risk based testing approaches,
             including AI-driven testing, to make software quality smarter, faster, and more efficient.
             </p>
             
