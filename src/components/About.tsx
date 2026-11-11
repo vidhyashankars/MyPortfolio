@@ -7,11 +7,11 @@ const About = () => {
     {
       icon: Award,
       title: '10+ Years',
-      description: 'Quality Assurance Experience',
+      description: 'Quality Engineering & Quality Assurance Experience',
     },
     {
       icon: Users,
-      title: '13+ Projects',
+      title: '16+ Projects',
       description: 'Successfully Delivered',
     },
     {
