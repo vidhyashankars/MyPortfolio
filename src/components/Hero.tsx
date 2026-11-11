@@ -37,7 +37,6 @@ const Hero = () => {
           >
             Hi, I'm <span className="font-semibold text-gray-900 dark:text-white">Vid</span> — a passionate Test Consultant with over
             <span className="font-semibold text-primary-600 dark:text-primary-400"> 10 years of experience</span> in software testing, Quality Assurance, and Quality Engineering.
-            I focus on delivering quality software through effective testing, automation, and AI testing, helping build reliable software and intelligent systems.
           </motion.p>
 
           {/* Key Highlights for Recruiters */}
