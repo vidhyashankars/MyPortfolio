@@ -9,7 +9,7 @@ const Projects = () => {
       icon: Truck,
       image: 'https://i.postimg.cc/RCtx5Z3X/Sherpa-Delivery.png',
       description: 'Comprehensive E2E functional testing for website, mobile applications, and plugin integrations. Implemented robust testing frameworks to ensure seamless delivery operations across multiple platforms.',
-      technologies: ['Manual Testing', 'Selenium', 'Cucumber BDD', 'TestRail', 'LambdaTest', 'Shopify', 'Wordpress', 'iOS', 'Android'],
+      technologies: ['Manual Testing', 'Selenium', 'Cucumber BDD +TDD', 'TestRail', 'LambdaTest', 'Shopify', 'Wordpress', 'iOS', 'Android'],
       category: 'E-commerce & Logistics',
       gradient: 'from-blue-500 to-cyan-500',
     },
@@ -166,7 +166,7 @@ const Projects = () => {
             <h3 className="text-2xl font-bold mb-4">Project Impact & Achievements</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div>
-                <div className="text-3xl font-bold mb-2">13+</div>
+                <div className="text-3xl font-bold mb-2">16+</div>
                 <p className="text-primary-100">Projects Delivered</p>
               </div>
               <div>
