@@ -40,7 +40,7 @@ const About = () => {
             About <span className="bg-gradient-to-r from-black to-primary-600 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Passionate about delivering excellence through comprehensive testing strategies
+            Advancing software quality through automation, innovation, and AI-driven testing.
           </p>
         </motion.div>
 
@@ -53,10 +53,9 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              As a dedicated Quality Assurance professional with over a decade of experience, 
-              My expertise spans from manual testing to automated solutions, and quality process optimization.
-              I specialize in creating robust testing frameworks and ensuring software reliability 
-              across diverse industries.
+              A passionate Quality Engineering professional with 10+ years of experience in Quality Assurance,
+              software testing, and automation, focused on driving software excellence
+              and delivering reliable, high-quality products.
             </p>
             
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
