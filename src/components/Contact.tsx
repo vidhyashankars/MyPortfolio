@@ -38,8 +38,8 @@ const Contact = () => {
                 Ready to bring that Aussie spirit to your next quality challenge!
               </p>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed font-medium">
-                Looking for NEW QA OPPORTUNITIES, testing strategy consultation, or want to discuss 
-                quality assurance best practices? Let's have a yarn!
+                Looking for a Quality Engineering role, and exploring QA opportunities, or want to discuss
+                testing and AI quality engineering? Let's have a yarn!
               </p>
               <div className="flex items-center justify-center gap-2 text-primary-600 dark:text-primary-400 mb-6">
                 <Clock size={20} />
